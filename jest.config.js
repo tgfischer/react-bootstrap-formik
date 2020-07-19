@@ -7,5 +7,6 @@ module.exports = {
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   moduleNameMapper: {
     "\\.scss$": "identity-obj-proxy"
-  }
+  },
+  testPathIgnorePatterns: ["/__stories__/"]
 };
