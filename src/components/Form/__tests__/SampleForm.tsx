@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Button } from "react-bootstrap";
 import { FormikConfig, FormikValues } from "formik";
 
-import { Form } from "../../Form";
+import { Form } from "../../../index";
 
 export const SampleForm: FC<FormikConfig<FormikValues>> = ({
   children,

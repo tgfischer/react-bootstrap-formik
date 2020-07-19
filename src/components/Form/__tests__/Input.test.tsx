@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 
-import { Form } from "../../Form";
+import { Form } from "../../../index";
 import { SampleForm } from "./SampleForm";
 
 describe("Form", () => {
