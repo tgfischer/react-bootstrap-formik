@@ -12,19 +12,19 @@ describe("Form", () => {
 
   it("should render the component", async () => {
     const { getByLabelText, getByText } = render(
-      <SampleForm initialValues={{ input: "" }} onSubmit={handleSubmit}>
-        <Form.Input name="input" label="Input field" />
+      <SampleForm initialValues={{ textarea: "" }} onSubmit={handleSubmit}>
+        <Form.Textarea name="textarea" label="Textarea field" />
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Input field"), {
+    fireEvent.change(getByLabelText("Textarea field"), {
       target: { value: message }
     });
     fireEvent.click(getByText("Submit"));
 
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith(
-        { input: message },
+        { textarea: message },
         expect.any(Object)
       )
     );
@@ -33,26 +33,26 @@ describe("Form", () => {
   it("should show the error feedback message", async () => {
     const { container, getByLabelText, getByText } = render(
       <SampleForm
-        initialValues={{ input: "" }}
+        initialValues={{ textarea: "" }}
         validationSchema={yup
           .object({
-            input: yup.string().max(1).required()
+            textarea: yup.string().max(1).required()
           })
           .required()}
         onSubmit={handleSubmit}
       >
-        <Form.Input name="input" label="Input field" />
+        <Form.Textarea name="textarea" label="Textarea field" />
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Input field"), {
+    fireEvent.change(getByLabelText("Textarea field"), {
       target: { value: "batman" }
     });
     fireEvent.click(getByText("Submit"));
 
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
-        "input must be at most 1 characters"
+        "textarea must be at most 1 characters"
       )
     );
     expect(handleSubmit).not.toHaveBeenCalled();
@@ -60,12 +60,16 @@ describe("Form", () => {
 
   it("should call on change event", async () => {
     const { getByLabelText } = render(
-      <SampleForm initialValues={{ input: "" }} onSubmit={handleSubmit}>
-        <Form.Input name="input" label="Input field" onChange={handleChange} />
+      <SampleForm initialValues={{ textarea: "" }} onSubmit={handleSubmit}>
+        <Form.Textarea
+          name="textarea"
+          label="Textarea field"
+          onChange={handleChange}
+        />
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Input field"), {
+    fireEvent.change(getByLabelText("Textarea field"), {
       target: { value: "batman" }
     });
 

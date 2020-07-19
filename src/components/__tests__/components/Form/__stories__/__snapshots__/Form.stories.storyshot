@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Form Help Text 1`] = `
+exports[`Storyshots Samples Login 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -15,137 +15,39 @@ exports[`Storyshots Form Help Text 1`] = `
       >
         <label
           class="form-label"
-          for="foo"
+          for="email"
         >
-          Input field
+          Email
         </label>
         <input
           class="form-control"
-          id="foo"
-          name="foo"
-          value="bar"
-        />
-        <small
-          class="form-text text-muted"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.
-        </small>
-      </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Form Initial Values 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
-      <div
-        class="form-group"
-      >
-        <label
-          class="form-label"
-          for="foo"
-        >
-          Input field
-        </label>
-        <input
-          class="form-control"
-          id="foo"
-          name="foo"
-          value="bar"
-        />
-      </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Form No Initial Value 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
-      <div
-        class="form-group"
-      >
-        <label
-          class="form-label"
-          for="foo"
-        >
-          Input field
-        </label>
-        <input
-          class="form-control"
-          id="foo"
-          name="foo"
+          id="email"
+          name="email"
+          type="email"
           value=""
         />
+        <div
+          class="invalid-feedback"
+        />
       </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Form No Label 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
       <div
         class="form-group"
       >
+        <label
+          class="form-label"
+          for="password"
+        >
+          Password
+        </label>
         <input
           class="form-control"
-          id="foo"
-          name="foo"
-          value="bar"
+          id="password"
+          name="password"
+          type="password"
+          value=""
+        />
+        <div
+          class="invalid-feedback"
         />
       </div>
       <div
