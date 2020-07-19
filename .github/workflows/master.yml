@@ -8,6 +8,11 @@ jobs:
       - name: Begin CI...
         uses: actions/checkout@v2
 
+      - name: webfactory/ssh-agent
+        uses: webfactory/ssh-agent@v0.4.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Use Node 12
         uses: actions/setup-node@v1
         with:
@@ -45,4 +50,5 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
         run: npx semantic-release
