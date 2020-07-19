@@ -2,7 +2,10 @@ module.exports = {
   roots: ["<rootDir>/src"],
   clearMocks: true,
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.(tsx|ts)?$": "ts-jest"
   },
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"]
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  moduleNameMapper: {
+    "\\.scss$": "identity-obj-proxy"
+  }
 };
