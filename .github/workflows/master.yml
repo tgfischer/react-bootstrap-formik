@@ -40,3 +40,8 @@ jobs:
         run: npm run build
         env:
           CI: true
+
+      - name: Release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
