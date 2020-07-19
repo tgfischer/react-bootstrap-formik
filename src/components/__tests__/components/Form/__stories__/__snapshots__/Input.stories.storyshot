@@ -1,5 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Input Default 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+      >
+        <input
+          class="form-control"
+          id="foo"
+          name="foo"
+          value=""
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input Error Feedback 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Input field
+        </label>
+        <input
+          class="form-control is-invalid"
+          id="foo"
+          name="foo"
+          value=""
+        />
+        <div
+          class="invalid-feedback"
+        >
+          This field is required
+        </div>
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Input Help Text 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
@@ -24,6 +108,9 @@ exports[`Storyshots Input Help Text 1`] = `
           id="foo"
           name="foo"
           value="bar"
+        />
+        <div
+          class="invalid-feedback"
         />
         <small
           class="form-text text-muted"
@@ -71,6 +158,9 @@ exports[`Storyshots Input Initial Values 1`] = `
           name="foo"
           value="bar"
         />
+        <div
+          class="invalid-feedback"
+        />
       </div>
       <div
         class="d-flex justify-content-end"
@@ -87,7 +177,7 @@ exports[`Storyshots Input Initial Values 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input No Initial Value 1`] = `
+exports[`Storyshots Input Label 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -112,40 +202,8 @@ exports[`Storyshots Input No Initial Value 1`] = `
           name="foo"
           value=""
         />
-      </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Input No Label 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
-      <div
-        class="form-group"
-      >
-        <input
-          class="form-control"
-          id="foo"
-          name="foo"
-          value="bar"
+        <div
+          class="invalid-feedback"
         />
       </div>
       <div

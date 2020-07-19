@@ -12,11 +12,16 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "settings": {
     "react": {
       "version": "detect"
     }
+  },
+  "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-sequences": "off"
   }
 }
