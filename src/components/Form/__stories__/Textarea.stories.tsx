@@ -6,8 +6,8 @@ import { SampleForm } from "../__tests__/SampleForm";
 import { Form } from "../../../index";
 
 export default {
-  title: "Input",
-  component: Form.Input,
+  title: "Textarea",
+  component: Form.Textarea,
   subcomponents: { Form }
 };
 
@@ -20,21 +20,25 @@ const helpText =
 
 export const Default: FC = () => (
   <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input name="foo" onChange={action("onChange")} />
+    <Form.Textarea name="foo" onChange={action("onChange")} />
   </SampleForm>
 );
 
 export const Label: FC = () => (
   <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input name="foo" label="Input field" onChange={action("onChange")} />
+    <Form.Textarea
+      name="foo"
+      label="Textarea field"
+      onChange={action("onChange")}
+    />
   </SampleForm>
 );
 
 export const Placeholder: FC = () => (
   <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input
+    <Form.Textarea
       name="foo"
-      label="Input field"
+      label="Textarea field"
       placeholder="Please enter some text..."
       onChange={action("onChange")}
     />
@@ -43,10 +47,10 @@ export const Placeholder: FC = () => (
 
 export const CustomType: FC = () => (
   <SampleForm initialValues={{ number: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input
+    <Form.Textarea
       name="number"
       type="number"
-      label="Numeric input"
+      label="Numeric Textarea"
       onChange={action("onChange")}
     />
   </SampleForm>
@@ -54,15 +58,19 @@ export const CustomType: FC = () => (
 
 export const InitialValues: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Input name="foo" label="Input field" onChange={action("onChange")} />
+    <Form.Textarea
+      name="foo"
+      label="Textarea field"
+      onChange={action("onChange")}
+    />
   </SampleForm>
 );
 
 export const HelpText: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Input
+    <Form.Textarea
       name="foo"
-      label="Input field"
+      label="Textarea field"
       helpText={helpText}
       onChange={action("onChange")}
     />
@@ -76,11 +84,22 @@ export const ErrorFeedback: FC = () => (
     validationSchema={yup.object({ foo: yup.string().required() })}
     onSubmit={action("onSubmit")}
   >
-    <Form.Input
+    <Form.Textarea
       name="foo"
-      label="Input field"
+      label="Textarea field"
       onChange={action("onChange")}
       required
+    />
+  </SampleForm>
+);
+
+export const CustomRows: FC = () => (
+  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
+    <Form.Textarea
+      name="foo"
+      label="Textarea field"
+      rows={10}
+      onChange={action("onChange")}
     />
   </SampleForm>
 );

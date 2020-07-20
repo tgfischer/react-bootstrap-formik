@@ -1,11 +1,14 @@
 import { FormEvent } from "react";
-import { FormikProps, FieldAttributes } from "formik";
+import { FormControlProps } from "react-bootstrap";
+import { FormikProps, GenericFieldHTMLAttributes } from "formik";
 
 export type FormProps<Values> = FormikProps<Values> & {
   handleSubmit: (event: FormEvent<HTMLElement>) => void;
 };
 
-export type FormInputFieldProps<Values> = FieldAttributes<Values> & {
-  label?: string;
-  helpText?: string;
-};
+export type FormInputFieldProps = FormControlProps &
+  GenericFieldHTMLAttributes & {
+    name: string;
+    label?: string;
+    helpText?: string;
+  };

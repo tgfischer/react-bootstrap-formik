@@ -1,89 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Input Custom Type 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
-      <div
-        class="form-group"
-      >
-        <label
-          class="form-label"
-          for="number"
-        >
-          Numeric input
-        </label>
-        <input
-          class="form-control"
-          id="number"
-          name="number"
-          type="number"
-          value=""
-        />
-        <div
-          class="invalid-feedback"
-        />
-      </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Input Default 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
-      <div
-        class="form-group"
-      >
-        <input
-          class="form-control"
-          id="foo"
-          name="foo"
-          value=""
-        />
-        <div
-          class="invalid-feedback"
-        />
-      </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Input Error Feedback 1`] = `
+exports[`Storyshots Textarea Custom Rows 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -100,14 +17,138 @@ exports[`Storyshots Input Error Feedback 1`] = `
           class="form-label"
           for="foo"
         >
-          Input field
+          Textarea field
         </label>
-        <input
+        <textarea
+          class="form-control"
+          id="foo"
+          name="foo"
+          rows="10"
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Textarea Custom Type 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+      >
+        <label
+          class="form-label"
+          for="number"
+        >
+          Numeric Textarea
+        </label>
+        <textarea
+          class="form-control"
+          id="number"
+          name="number"
+          type="number"
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Textarea Default 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+      >
+        <textarea
+          class="form-control"
+          id="foo"
+          name="foo"
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Textarea Error Feedback 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Textarea field
+        </label>
+        <textarea
           class="form-control is-invalid"
           id="foo"
           name="foo"
           required=""
-          value=""
         />
         <div
           class="invalid-feedback"
@@ -130,7 +171,7 @@ exports[`Storyshots Input Error Feedback 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input Help Text 1`] = `
+exports[`Storyshots Textarea Help Text 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -147,14 +188,15 @@ exports[`Storyshots Input Help Text 1`] = `
           class="form-label"
           for="foo"
         >
-          Input field
+          Textarea field
         </label>
-        <input
+        <textarea
           class="form-control"
           id="foo"
           name="foo"
-          value="Hello, World!"
-        />
+        >
+          Hello, World!
+        </textarea>
         <div
           class="invalid-feedback"
         />
@@ -179,7 +221,7 @@ exports[`Storyshots Input Help Text 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input Initial Values 1`] = `
+exports[`Storyshots Textarea Initial Values 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -196,13 +238,57 @@ exports[`Storyshots Input Initial Values 1`] = `
           class="form-label"
           for="foo"
         >
-          Input field
+          Textarea field
         </label>
-        <input
+        <textarea
           class="form-control"
           id="foo"
           name="foo"
-          value="Hello, World!"
+        >
+          Hello, World!
+        </textarea>
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Textarea Label 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Textarea field
+        </label>
+        <textarea
+          class="form-control"
+          id="foo"
+          name="foo"
         />
         <div
           class="invalid-feedback"
@@ -223,7 +309,7 @@ exports[`Storyshots Input Initial Values 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input Label 1`] = `
+exports[`Storyshots Textarea Placeholder 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -240,58 +326,13 @@ exports[`Storyshots Input Label 1`] = `
           class="form-label"
           for="foo"
         >
-          Input field
+          Textarea field
         </label>
-        <input
-          class="form-control"
-          id="foo"
-          name="foo"
-          value=""
-        />
-        <div
-          class="invalid-feedback"
-        />
-      </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Input Placeholder 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
-      <div
-        class="form-group"
-      >
-        <label
-          class="form-label"
-          for="foo"
-        >
-          Input field
-        </label>
-        <input
+        <textarea
           class="form-control"
           id="foo"
           name="foo"
           placeholder="Please enter some text..."
-          value=""
         />
         <div
           class="invalid-feedback"
