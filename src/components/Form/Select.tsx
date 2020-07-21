@@ -3,13 +3,15 @@ import { Form } from "react-bootstrap";
 import { useField } from "formik";
 
 import { Group } from "./Group";
-import { FormTextareaFieldProps } from "./types";
+import { FormSelectFieldProps } from "./types";
 
-export const Textarea: FC<FormTextareaFieldProps> = ({
+export const Select: FC<FormSelectFieldProps> = ({
   label,
   helpText,
+  placeholder,
+  children,
   ...props
-}: FormTextareaFieldProps) => {
+}: FormSelectFieldProps) => {
   const [{ name, value, onChange, onBlur }, { error }] = useField(props);
   const handleChange = useCallback((e) => (props.onChange!(e), onChange(e)), [
     onChange,
@@ -19,17 +21,24 @@ export const Textarea: FC<FormTextareaFieldProps> = ({
     <Group controlId={name} label={label} helpText={helpText} error={error}>
       <Form.Control
         {...props}
-        as="textarea"
+        as="select"
         name={name}
         value={value?.toString()}
         isInvalid={!!error}
         onChange={handleChange}
         onBlur={onBlur}
-      />
+      >
+        {placeholder && (
+          <option value="" disabled>
+            {placeholder}
+          </option>
+        )}
+        {children}
+      </Form.Control>
     </Group>
   );
 };
 
-Textarea.defaultProps = {
+Select.defaultProps = {
   onChange: () => null
 };

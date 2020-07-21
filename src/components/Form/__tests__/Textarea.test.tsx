@@ -5,7 +5,7 @@ import { render, fireEvent, waitFor } from "@testing-library/react";
 import { Form } from "../../../index";
 import { SampleForm } from "./SampleForm";
 
-describe("Form", () => {
+describe("Textarea tests", () => {
   const handleSubmit = jest.fn();
   const handleChange = jest.fn();
   const message = "Hello, World!";

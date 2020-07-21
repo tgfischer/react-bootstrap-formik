@@ -2,6 +2,7 @@ import React, { FC, useCallback } from "react";
 import { Form } from "react-bootstrap";
 import { useField } from "formik";
 
+import { Group } from "./Group";
 import { FormInputFieldProps } from "./types";
 
 export const Input: FC<FormInputFieldProps> = ({
@@ -15,8 +16,7 @@ export const Input: FC<FormInputFieldProps> = ({
     props.onChange
   ]);
   return (
-    <Form.Group controlId={name}>
-      {label && <Form.Label>{label}</Form.Label>}
+    <Group controlId={name} label={label} helpText={helpText} error={error}>
       <Form.Control
         {...props}
         name={name}
@@ -25,9 +25,7 @@ export const Input: FC<FormInputFieldProps> = ({
         onChange={handleChange}
         onBlur={onBlur}
       />
-      <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
-      {helpText && <Form.Text muted>{helpText}</Form.Text>}
-    </Form.Group>
+    </Group>
   );
 };
 

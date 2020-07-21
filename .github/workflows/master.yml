@@ -46,9 +46,13 @@ jobs:
         env:
           CI: true
 
+      - name: Build Storybook
+        run: npm run build-storybook -- -o docs
+        env:
+          CI: true
+
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
         run: npx semantic-release
