@@ -1,14 +1,43 @@
-import { FormEvent } from "react";
-import { FormControlProps } from "react-bootstrap";
-import { FormikProps, GenericFieldHTMLAttributes } from "formik";
+import { FormEvent, RefObject } from "react";
+import { FormControlProps, FormGroupProps } from "react-bootstrap";
+import { FormikProps } from "formik";
 
 export type FormProps<Values> = FormikProps<Values> & {
   handleSubmit: (event: FormEvent<HTMLElement>) => void;
 };
 
+export type FormFieldProps = {
+  name: string;
+  label?: string;
+  helpText?: string;
+};
+
+export type FormGroupFieldProps = FormGroupProps & {
+  label?: string;
+  helpText?: string;
+  error?: string;
+};
+
 export type FormInputFieldProps = FormControlProps &
-  GenericFieldHTMLAttributes & {
-    name: string;
-    label?: string;
-    helpText?: string;
+  JSX.IntrinsicElements["input"] &
+  FormFieldProps;
+
+export type FormTextareaFieldProps = FormControlProps &
+  Omit<JSX.IntrinsicElements["textarea"], "ref"> &
+  FormFieldProps & {
+    ref?:
+      | RefObject<HTMLTextAreaElement>
+      | ((instance: HTMLTextAreaElement | null) => void)
+      | null
+      | undefined;
+  };
+
+export type FormSelectFieldProps = FormControlProps &
+  Omit<JSX.IntrinsicElements["select"], "ref"> &
+  FormFieldProps & {
+    ref?:
+      | RefObject<HTMLSelectElement>
+      | ((instance: HTMLSelectElement | null) => void)
+      | null
+      | undefined;
   };

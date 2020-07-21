@@ -4,11 +4,13 @@ import { Formik, FormikConfig, FormikValues } from "formik";
 
 import { FormProps } from "./types";
 import { Input } from "./Input";
+import { Select } from "./Select";
 import { Textarea } from "./Textarea";
 
 type FormComponent = FC<FormikConfig<FormikValues>> & {
   Input: typeof Input;
   Textarea: typeof Textarea;
+  Select: typeof Select;
 };
 
 export const Form: FormComponent = ({
@@ -24,3 +26,4 @@ export const Form: FormComponent = ({
 
 Form.Input = Input;
 Form.Textarea = Textarea;
+Form.Select = Select;
