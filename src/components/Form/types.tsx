@@ -41,3 +41,9 @@ export type FormSelectFieldProps = FormControlProps &
       | null
       | undefined;
   };
+
+export type FormCheckboxFieldProps = FormControlProps &
+  JSX.IntrinsicElements["input"] & {
+    name: string;
+    label: string;
+  };
