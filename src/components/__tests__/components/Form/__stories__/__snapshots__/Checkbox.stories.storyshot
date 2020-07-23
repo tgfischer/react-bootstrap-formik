@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Checkbox Custom Type 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Select from the options below
+        </label>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox1"
+            label="Checkbox 1"
+            name="checkbox1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox1"
+          >
+            Checkbox 1
+          </label>
+        </div>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="checkbox2"
+            label="Checkbox 2"
+            name="checkbox2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox2"
+          >
+            Checkbox 2
+          </label>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Checkbox Default 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox1"
+            label="Checkbox 1"
+            name="checkbox1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox1"
+          >
+            Checkbox 1
+          </label>
+        </div>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox2"
+            label="Checkbox 2"
+            name="checkbox2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox2"
+          >
+            Checkbox 2
+          </label>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Checkbox Error Feedback 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Select from the options below
+        </label>
+        <div
+          class="is-invalid custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input is-invalid"
+            id="checkbox1"
+            label="Checkbox 1"
+            name="checkbox1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox1"
+          >
+            Checkbox 1
+          </label>
+        </div>
+        <div
+          class="is-invalid custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input is-invalid"
+            id="checkbox2"
+            label="Checkbox 2"
+            name="checkbox2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox2"
+          >
+            Checkbox 2
+          </label>
+        </div>
+        <div
+          class="invalid-feedback"
+        >
+          You must select at least one option
+        </div>
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Checkbox Help Text 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Select from the options below
+        </label>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox1"
+            label="Checkbox 1"
+            name="checkbox1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox1"
+          >
+            Checkbox 1
+          </label>
+        </div>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox2"
+            label="Checkbox 2"
+            name="checkbox2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox2"
+          >
+            Checkbox 2
+          </label>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.
+        </small>
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Checkbox Initial Values 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Select from the options below
+        </label>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox1"
+            label="Checkbox 1"
+            name="checkbox1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox1"
+          >
+            Checkbox 1
+          </label>
+        </div>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            checked=""
+            class="custom-control-input"
+            id="checkbox2"
+            label="Checkbox 2"
+            name="checkbox2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox2"
+          >
+            Checkbox 2
+          </label>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Checkbox Label 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Select from the options below
+        </label>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox1"
+            label="Checkbox 1"
+            name="checkbox1"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox1"
+          >
+            Checkbox 1
+          </label>
+        </div>
+        <div
+          class="custom-control custom-checkbox"
+        >
+          <input
+            class="custom-control-input"
+            id="checkbox2"
+            label="Checkbox 2"
+            name="checkbox2"
+            type="checkbox"
+          />
+          <label
+            class="custom-control-label"
+            for="checkbox2"
+          >
+            Checkbox 2
+          </label>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
