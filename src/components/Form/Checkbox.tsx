@@ -1,36 +1,10 @@
-import React, {
-  FC,
-  createContext,
-  useContext,
-  useCallback,
-  useMemo
-} from "react";
+import React, { FC, useContext, useCallback, useMemo } from "react";
 import { useField, useFormikContext, FormikProps } from "formik";
 import { Form } from "react-bootstrap";
 import classnames from "classnames";
 
-import { Group } from "./Group";
-import { FormInputFieldProps, FormCheckboxFieldProps } from "./types";
-
-type CheckboxGroupContextType = {
-  name?: string;
-};
-
-const CheckboxGroupContext = createContext<CheckboxGroupContextType>({});
-
-export const CheckboxGroup: FC<FormInputFieldProps> = ({
-  children,
-  ...props
-}: FormInputFieldProps) => {
-  const [, { error }] = useField(props);
-  return (
-    <CheckboxGroupContext.Provider value={{ name: props.name }}>
-      <Group {...props} controlId={props.name} error={error}>
-        {children}
-      </Group>
-    </CheckboxGroupContext.Provider>
-  );
-};
+import { GroupContext } from "./Group";
+import { FormCheckboxFieldProps } from "./types";
 
 export const Checkbox: FC<FormCheckboxFieldProps> = ({
   custom,
@@ -39,7 +13,7 @@ export const Checkbox: FC<FormCheckboxFieldProps> = ({
   const { values, errors, setFieldValue } = useFormikContext<
     FormikProps<FormCheckboxFieldProps>
   >();
-  const { name: groupName = "" } = useContext(CheckboxGroupContext);
+  const { name: groupName = "" } = useContext(GroupContext);
   const [{ name, onBlur }] = useField(props);
   const isChecked = useMemo(() => values[groupName].includes(name), [
     groupName,

@@ -12,6 +12,7 @@ exports[`Storyshots Textarea Custom Rows 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -56,6 +57,7 @@ exports[`Storyshots Textarea Custom Type 1`] = `
     >
       <div
         class="form-group"
+        name="number"
       >
         <label
           class="form-label"
@@ -100,6 +102,7 @@ exports[`Storyshots Textarea Default 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <textarea
           class="form-control"
@@ -137,6 +140,7 @@ exports[`Storyshots Textarea Error Feedback 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -183,6 +187,7 @@ exports[`Storyshots Textarea Help Text 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -233,6 +238,7 @@ exports[`Storyshots Textarea Initial Values 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -278,6 +284,7 @@ exports[`Storyshots Textarea Label 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -321,6 +328,7 @@ exports[`Storyshots Textarea Placeholder 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"

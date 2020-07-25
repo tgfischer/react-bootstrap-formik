@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Checkbox Default 1`] = `
+exports[`Storyshots Radio Default 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -15,37 +15,37 @@ exports[`Storyshots Checkbox Default 1`] = `
         name="foo"
       >
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
-            id="checkbox1"
-            label="Checkbox 1"
-            name="checkbox1"
-            type="checkbox"
+            id="radio1"
+            label="Radio 1"
+            name="radio1"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox1"
+            for="radio1"
           >
-            Checkbox 1
+            Radio 1
           </label>
         </div>
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
-            id="checkbox2"
-            label="Checkbox 2"
-            name="checkbox2"
-            type="checkbox"
+            id="radio2"
+            label="Radio 2"
+            name="radio2"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox2"
+            for="radio2"
           >
-            Checkbox 2
+            Radio 2
           </label>
         </div>
         <div
@@ -67,7 +67,7 @@ exports[`Storyshots Checkbox Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Checkbox Error Feedback 1`] = `
+exports[`Storyshots Radio Error Feedback 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -87,37 +87,37 @@ exports[`Storyshots Checkbox Error Feedback 1`] = `
           Select from the options below
         </label>
         <div
-          class="is-invalid custom-control custom-checkbox"
+          class="is-invalid custom-control custom-radio"
         >
           <input
             class="custom-control-input is-invalid"
-            id="checkbox1"
-            label="Checkbox 1"
-            name="checkbox1"
-            type="checkbox"
+            id="radio1"
+            label="Radio 1"
+            name="radio1"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox1"
+            for="radio1"
           >
-            Checkbox 1
+            Radio 1
           </label>
         </div>
         <div
-          class="is-invalid custom-control custom-checkbox"
+          class="is-invalid custom-control custom-radio"
         >
           <input
             class="custom-control-input is-invalid"
-            id="checkbox2"
-            label="Checkbox 2"
-            name="checkbox2"
-            type="checkbox"
+            id="radio2"
+            label="Radio 2"
+            name="radio2"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox2"
+            for="radio2"
           >
-            Checkbox 2
+            Radio 2
           </label>
         </div>
         <div
@@ -141,7 +141,7 @@ exports[`Storyshots Checkbox Error Feedback 1`] = `
 </div>
 `;
 
-exports[`Storyshots Checkbox Help Text 1`] = `
+exports[`Storyshots Radio Help Text 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -161,37 +161,37 @@ exports[`Storyshots Checkbox Help Text 1`] = `
           Select from the options below
         </label>
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
-            id="checkbox1"
-            label="Checkbox 1"
-            name="checkbox1"
-            type="checkbox"
+            id="radio1"
+            label="Radio 1"
+            name="radio1"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox1"
+            for="radio1"
           >
-            Checkbox 1
+            Radio 1
           </label>
         </div>
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
-            id="checkbox2"
-            label="Checkbox 2"
-            name="checkbox2"
-            type="checkbox"
+            id="radio2"
+            label="Radio 2"
+            name="radio2"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox2"
+            for="radio2"
           >
-            Checkbox 2
+            Radio 2
           </label>
         </div>
         <div
@@ -218,7 +218,7 @@ exports[`Storyshots Checkbox Help Text 1`] = `
 </div>
 `;
 
-exports[`Storyshots Checkbox Initial Values 1`] = `
+exports[`Storyshots Radio Initial Values 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -238,38 +238,38 @@ exports[`Storyshots Checkbox Initial Values 1`] = `
           Select from the options below
         </label>
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
-            id="checkbox1"
-            label="Checkbox 1"
-            name="checkbox1"
-            type="checkbox"
+            id="radio1"
+            label="Radio 1"
+            name="radio1"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox1"
+            for="radio1"
           >
-            Checkbox 1
+            Radio 1
           </label>
         </div>
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             checked=""
             class="custom-control-input"
-            id="checkbox2"
-            label="Checkbox 2"
-            name="checkbox2"
-            type="checkbox"
+            id="radio2"
+            label="Radio 2"
+            name="radio2"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox2"
+            for="radio2"
           >
-            Checkbox 2
+            Radio 2
           </label>
         </div>
         <div
@@ -291,7 +291,7 @@ exports[`Storyshots Checkbox Initial Values 1`] = `
 </div>
 `;
 
-exports[`Storyshots Checkbox Label 1`] = `
+exports[`Storyshots Radio Label 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
 >
@@ -311,37 +311,37 @@ exports[`Storyshots Checkbox Label 1`] = `
           Select from the options below
         </label>
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
-            id="checkbox1"
-            label="Checkbox 1"
-            name="checkbox1"
-            type="checkbox"
+            id="radio1"
+            label="Radio 1"
+            name="radio1"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox1"
+            for="radio1"
           >
-            Checkbox 1
+            Radio 1
           </label>
         </div>
         <div
-          class="custom-control custom-checkbox"
+          class="custom-control custom-radio"
         >
           <input
             class="custom-control-input"
-            id="checkbox2"
-            label="Checkbox 2"
-            name="checkbox2"
-            type="checkbox"
+            id="radio2"
+            label="Radio 2"
+            name="radio2"
+            type="radio"
           />
           <label
             class="custom-control-label"
-            for="checkbox2"
+            for="radio2"
           >
-            Checkbox 2
+            Radio 2
           </label>
         </div>
         <div

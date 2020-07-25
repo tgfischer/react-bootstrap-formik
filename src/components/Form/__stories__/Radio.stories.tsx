@@ -37,33 +37,33 @@ const RadioButtons: FC = () => (
 
 export const Default: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.RadioGroup name="foo">
+    <Form.Group name="foo">
       <RadioButtons />
-    </Form.RadioGroup>
+    </Form.Group>
   </SampleForm>
 );
 
 export const Label: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.RadioGroup name="foo" label={label}>
+    <Form.Group name="foo" label={label}>
       <RadioButtons />
-    </Form.RadioGroup>
+    </Form.Group>
   </SampleForm>
 );
 
 export const InitialValues: FC = () => (
   <SampleForm initialValues={{ foo: "radio2" }} onSubmit={action("onSubmit")}>
-    <Form.RadioGroup name="foo" label={label}>
+    <Form.Group name="foo" label={label}>
       <RadioButtons />
-    </Form.RadioGroup>
+    </Form.Group>
   </SampleForm>
 );
 
 export const HelpText: FC = () => (
-  <SampleForm initialValues={{ foo: "radio2" }} onSubmit={action("onSubmit")}>
-    <Form.RadioGroup name="foo" label={label} helpText={helpText}>
+  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
+    <Form.Group name="foo" label={label} helpText={helpText}>
       <RadioButtons />
-    </Form.RadioGroup>
+    </Form.Group>
   </SampleForm>
 );
 
@@ -76,8 +76,8 @@ export const ErrorFeedback: FC = () => (
     })}
     onSubmit={action("onSubmit")}
   >
-    <Form.RadioGroup name="foo" label={label}>
+    <Form.Group name="foo" label={label}>
       <RadioButtons />
-    </Form.RadioGroup>
+    </Form.Group>
   </SampleForm>
 );

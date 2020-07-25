@@ -8,7 +8,7 @@ import { Form } from "../../../index";
 export default {
   title: "Checkbox",
   component: Form.Checkbox,
-  subcomponents: { Form, CheckboxGroup: Form.CheckboxGroup }
+  subcomponents: { Form, Group: Form.Group }
 };
 
 const initialValues = { foo: [] };
@@ -35,17 +35,17 @@ const Checkboxes: FC = () => (
 
 export const Default: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.CheckboxGroup name="foo">
+    <Form.Group name="foo">
       <Checkboxes />
-    </Form.CheckboxGroup>
+    </Form.Group>
   </SampleForm>
 );
 
 export const Label: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.CheckboxGroup name="foo" label="Select from the options below">
+    <Form.Group name="foo" label="Select from the options below">
       <Checkboxes />
-    </Form.CheckboxGroup>
+    </Form.Group>
   </SampleForm>
 );
 
@@ -54,21 +54,21 @@ export const InitialValues: FC = () => (
     initialValues={{ foo: ["checkbox2"] }}
     onSubmit={action("onSubmit")}
   >
-    <Form.CheckboxGroup name="foo" label="Select from the options below">
+    <Form.Group name="foo" label="Select from the options below">
       <Checkboxes />
-    </Form.CheckboxGroup>
+    </Form.Group>
   </SampleForm>
 );
 
 export const HelpText: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.CheckboxGroup
+    <Form.Group
       name="foo"
       label="Select from the options below"
       helpText={helpText}
     >
       <Checkboxes />
-    </Form.CheckboxGroup>
+    </Form.Group>
   </SampleForm>
 );
 
@@ -81,8 +81,8 @@ export const ErrorFeedback: FC = () => (
     })}
     onSubmit={action("onSubmit")}
   >
-    <Form.CheckboxGroup name="foo" label="Select from the options below">
+    <Form.Group name="foo" label="Select from the options below">
       <Checkboxes />
-    </Form.CheckboxGroup>
+    </Form.Group>
   </SampleForm>
 );

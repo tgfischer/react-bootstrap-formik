@@ -49,10 +49,10 @@ describe("Checkbox tests", () => {
   ])("%s", async (_, action, expectedValue) => {
     const { getByText, ...instance } = render(
       <SampleForm initialValues={{ checkbox: [] }} onSubmit={handleSubmit}>
-        <Form.CheckboxGroup name="checkbox">
+        <Form.Group name="checkbox">
           <Form.Checkbox name="checkbox1" label="Checkbox 1" />
           <Form.Checkbox name="checkbox2" label="Checkbox 2" />
-        </Form.CheckboxGroup>
+        </Form.Group>
       </SampleForm>
     );
 
@@ -76,10 +76,10 @@ describe("Checkbox tests", () => {
         })}
         onSubmit={handleSubmit}
       >
-        <Form.CheckboxGroup name="checkbox">
+        <Form.Group name="checkbox">
           <Form.Checkbox name="checkbox1" label="Checkbox 1" />
           <Form.Checkbox name="checkbox2" label="Checkbox 2" />
-        </Form.CheckboxGroup>
+        </Form.Group>
       </SampleForm>
     );
 
@@ -96,7 +96,7 @@ describe("Checkbox tests", () => {
   it("should call on change event", async () => {
     const { getByLabelText } = render(
       <SampleForm initialValues={{ checkbox: [] }} onSubmit={handleSubmit}>
-        <Form.CheckboxGroup name="checkbox">
+        <Form.Group name="checkbox">
           <Form.Checkbox
             name="checkbox1"
             label="Checkbox 1"
@@ -107,7 +107,7 @@ describe("Checkbox tests", () => {
             label="Checkbox 2"
             onChange={handleChange}
           />
-        </Form.CheckboxGroup>
+        </Form.Group>
       </SampleForm>
     );
 

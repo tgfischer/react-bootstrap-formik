@@ -12,6 +12,7 @@ exports[`Storyshots Samples Login 1`] = `
     >
       <div
         class="form-group"
+        name="email"
       >
         <label
           class="form-label"
@@ -32,6 +33,7 @@ exports[`Storyshots Samples Login 1`] = `
       </div>
       <div
         class="form-group"
+        name="password"
       >
         <label
           class="form-label"

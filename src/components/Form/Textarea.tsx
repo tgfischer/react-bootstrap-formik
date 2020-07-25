@@ -14,7 +14,13 @@ export const Textarea: FC<FormTextareaFieldProps> = ({
   const [{ name, value, onBlur }, { error }] = useField(props);
   const handleChange = useChange(props);
   return (
-    <Group controlId={name} label={label} helpText={helpText} error={error}>
+    <Group
+      name={name}
+      controlId={name}
+      label={label}
+      helpText={helpText}
+      error={error}
+    >
       <Form.Control
         {...props}
         as="textarea"
