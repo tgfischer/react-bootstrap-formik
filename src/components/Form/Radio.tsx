@@ -44,3 +44,7 @@ export const Radio: FC<FormCheckboxFieldProps> = ({
     </Form.Check>
   );
 };
+
+Radio.defaultProps = {
+  onChange: () => null
+};
