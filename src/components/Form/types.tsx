@@ -13,6 +13,7 @@ export type FormFieldProps = {
 };
 
 export type FormGroupFieldProps = FormGroupProps & {
+  name: string;
   label?: string;
   helpText?: string;
   error?: string;
@@ -47,3 +48,8 @@ export type FormCheckboxFieldProps = FormControlProps &
     name: string;
     label: string;
   };
+
+export type BaseFormCheckboxFieldProps = FormCheckboxFieldProps & {
+  type: "radio" | "checkbox";
+  isChecked: boolean;
+};

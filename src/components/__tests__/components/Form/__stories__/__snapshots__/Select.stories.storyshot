@@ -12,6 +12,7 @@ exports[`Storyshots Select Default 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <select
           class="form-control"
@@ -75,6 +76,7 @@ exports[`Storyshots Select Error Feedback 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -152,6 +154,7 @@ exports[`Storyshots Select Help Text 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -232,6 +235,7 @@ exports[`Storyshots Select Initial Value 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -307,6 +311,7 @@ exports[`Storyshots Select Label 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -376,6 +381,7 @@ exports[`Storyshots Select Placeholder 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"

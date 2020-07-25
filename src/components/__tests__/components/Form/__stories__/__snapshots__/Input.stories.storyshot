@@ -12,6 +12,7 @@ exports[`Storyshots Input Custom Type 1`] = `
     >
       <div
         class="form-group"
+        name="number"
       >
         <label
           class="form-label"
@@ -57,6 +58,7 @@ exports[`Storyshots Input Default 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <input
           class="form-control"
@@ -95,6 +97,7 @@ exports[`Storyshots Input Error Feedback 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -142,6 +145,7 @@ exports[`Storyshots Input Help Text 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -191,6 +195,7 @@ exports[`Storyshots Input Initial Values 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -235,6 +240,7 @@ exports[`Storyshots Input Label 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"
@@ -279,6 +285,7 @@ exports[`Storyshots Input Placeholder 1`] = `
     >
       <div
         class="form-group"
+        name="foo"
       >
         <label
           class="form-label"

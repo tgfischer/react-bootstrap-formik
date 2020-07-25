@@ -1,30 +1,10 @@
-import React, { FC, createContext, useContext, useCallback } from "react";
+import React, { FC, useContext, useCallback } from "react";
 import { useField, useFormikContext, FormikProps } from "formik";
 import { Form } from "react-bootstrap";
 import classnames from "classnames";
 
-import { Group } from "./Group";
-import { FormInputFieldProps, FormCheckboxFieldProps } from "./types";
-
-type RadioGroupContextType = {
-  name?: string;
-};
-
-const RadioGroupContext = createContext<RadioGroupContextType>({});
-
-export const RadioGroup: FC<FormInputFieldProps> = ({
-  children,
-  ...props
-}: FormInputFieldProps) => {
-  const [, { error }] = useField(props);
-  return (
-    <RadioGroupContext.Provider value={{ name: props.name }}>
-      <Group {...props} controlId={props.name} error={error}>
-        {children}
-      </Group>
-    </RadioGroupContext.Provider>
-  );
-};
+import { GroupContext } from "./Group";
+import { FormCheckboxFieldProps } from "./types";
 
 export const Radio: FC<FormCheckboxFieldProps> = ({
   custom,
@@ -33,7 +13,7 @@ export const Radio: FC<FormCheckboxFieldProps> = ({
   const { values, errors, setFieldValue } = useFormikContext<
     FormikProps<FormCheckboxFieldProps>
   >();
-  const { name: groupName = "" } = useContext(RadioGroupContext);
+  const { name: groupName = "" } = useContext(GroupContext);
   const [{ name, onBlur }] = useField(props);
   const isInvalid = !!errors[groupName];
   const handleChange = useCallback(
