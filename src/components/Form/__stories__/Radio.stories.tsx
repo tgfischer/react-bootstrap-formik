@@ -6,27 +6,29 @@ import { SampleForm } from "../__tests__/SampleForm";
 import { Form } from "../../../index";
 
 export default {
-  title: "Checkbox",
-  component: Form.Checkbox,
-  subcomponents: { Form, CheckboxGroup: Form.CheckboxGroup }
+  title: "Radio",
+  component: Form.Radio,
+  subcomponents: { Form, Group: Form.Group }
 };
 
-const initialValues = { foo: [] };
+const initialValues = { foo: "" };
+
+const label = "Select from the options below";
 
 const helpText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.";
 
-const Checkboxes: FC = () => (
+const RadioButtons: FC = () => (
   <>
-    <Form.Checkbox
-      name="checkbox1"
-      label="Checkbox 1"
+    <Form.Radio
+      name="radio1"
+      label="Radio 1"
       onChange={action("onChange")}
       custom
     />
-    <Form.Checkbox
-      name="checkbox2"
-      label="Checkbox 2"
+    <Form.Radio
+      name="radio2"
+      label="Radio 2"
       onChange={action("onChange")}
       custom
     />
@@ -35,40 +37,33 @@ const Checkboxes: FC = () => (
 
 export const Default: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.CheckboxGroup name="foo">
-      <Checkboxes />
-    </Form.CheckboxGroup>
+    <Form.RadioGroup name="foo">
+      <RadioButtons />
+    </Form.RadioGroup>
   </SampleForm>
 );
 
 export const Label: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.CheckboxGroup name="foo" label="Select from the options below">
-      <Checkboxes />
-    </Form.CheckboxGroup>
+    <Form.RadioGroup name="foo" label={label}>
+      <RadioButtons />
+    </Form.RadioGroup>
   </SampleForm>
 );
 
 export const InitialValues: FC = () => (
-  <SampleForm
-    initialValues={{ foo: ["checkbox2"] }}
-    onSubmit={action("onSubmit")}
-  >
-    <Form.CheckboxGroup name="foo" label="Select from the options below">
-      <Checkboxes />
-    </Form.CheckboxGroup>
+  <SampleForm initialValues={{ foo: "radio2" }} onSubmit={action("onSubmit")}>
+    <Form.RadioGroup name="foo" label={label}>
+      <RadioButtons />
+    </Form.RadioGroup>
   </SampleForm>
 );
 
 export const HelpText: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.CheckboxGroup
-      name="foo"
-      label="Select from the options below"
-      helpText={helpText}
-    >
-      <Checkboxes />
-    </Form.CheckboxGroup>
+  <SampleForm initialValues={{ foo: "radio2" }} onSubmit={action("onSubmit")}>
+    <Form.RadioGroup name="foo" label={label} helpText={helpText}>
+      <RadioButtons />
+    </Form.RadioGroup>
   </SampleForm>
 );
 
@@ -77,12 +72,12 @@ export const ErrorFeedback: FC = () => (
     initialValues={initialValues}
     initialErrors={{ foo: "You must select at least one option" }}
     validationSchema={yup.object({
-      foo: yup.array().of(yup.string().required()).required()
+      foo: yup.string().required()
     })}
     onSubmit={action("onSubmit")}
   >
-    <Form.CheckboxGroup name="foo" label="Select from the options below">
-      <Checkboxes />
-    </Form.CheckboxGroup>
+    <Form.RadioGroup name="foo" label={label}>
+      <RadioButtons />
+    </Form.RadioGroup>
   </SampleForm>
 );
