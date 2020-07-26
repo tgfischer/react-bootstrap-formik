@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Form } from "react-bootstrap";
 import { useField } from "formik";
 
+import { noop } from "../utils";
 import { Group } from "./Group";
 import { FormSelectFieldProps } from "./types";
 import { useChange } from "./hooks";
@@ -44,5 +45,5 @@ export const Select: FC<FormSelectFieldProps> = ({
 };
 
 Select.defaultProps = {
-  onChange: () => null
+  onChange: noop
 };

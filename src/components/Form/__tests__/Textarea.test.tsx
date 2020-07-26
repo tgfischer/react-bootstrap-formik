@@ -10,7 +10,7 @@ describe("Textarea tests", () => {
   const handleChange = jest.fn();
   const message = "Hello, World!";
 
-  it("should render the component", async () => {
+  it("should change the textarea value", async () => {
     const { getByLabelText, getByText } = render(
       <SampleForm initialValues={{ textarea: "" }} onSubmit={handleSubmit}>
         <Form.Textarea name="textarea" label="Textarea field" />

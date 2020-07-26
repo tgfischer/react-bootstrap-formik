@@ -23,7 +23,11 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "bootstrap": ">=4",
+    "formik": ">=2.1",
+    "react": ">=16",
+    "react-bootstrap": ">=1.2",
+    "yup": ">=0.29"
   },
   "husky": {
     "hooks": {

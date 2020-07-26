@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Form } from "react-bootstrap";
 import { useField } from "formik";
 
+import { noop } from "../utils";
 import { Group } from "./Group";
 import { FormTextareaFieldProps } from "./types";
 import { useChange } from "./hooks";
@@ -35,5 +36,5 @@ export const Textarea: FC<FormTextareaFieldProps> = ({
 };
 
 Textarea.defaultProps = {
-  onChange: () => null
+  onChange: noop
 };
