@@ -20,7 +20,7 @@ describe("Select tests", () => {
     </>
   );
 
-  it("should render the component", async () => {
+  it("should change the select value", async () => {
     const { getByLabelText, getByText } = render(
       <SampleForm initialValues={{ select: "" }} onSubmit={handleSubmit}>
         <Form.Select name="select" label="Select field">

@@ -9,8 +9,7 @@ import { Select } from "./Select";
 import { Textarea } from "./Textarea";
 import { Checkbox } from "./Checkbox";
 import { Radio } from "./Radio";
-
-export { useFormikContext, useField } from "formik";
+import { Range } from "./Range";
 
 type FormComponent = FC<FormikConfig<FormikValues>> & {
   Group: typeof Group;
@@ -19,6 +18,7 @@ type FormComponent = FC<FormikConfig<FormikValues>> & {
   Select: typeof Select;
   Checkbox: typeof Checkbox;
   Radio: typeof Radio;
+  Range: typeof Range;
 };
 
 export const Form: FormComponent = ({
@@ -38,3 +38,4 @@ Form.Textarea = Textarea;
 Form.Select = Select;
 Form.Checkbox = Checkbox;
 Form.Radio = Radio;
+Form.Range = Range;

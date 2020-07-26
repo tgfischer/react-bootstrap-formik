@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Range Custom 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Range field
+        </label>
+        <input
+          class="custom-range"
+          id="foo"
+          name="foo"
+          type="range"
+          value=""
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Range Default 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <input
+          class="form-control-range"
+          id="foo"
+          name="foo"
+          type="range"
+          value=""
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Range Error Feedback 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Range field
+        </label>
+        <input
+          class="form-control-range is-invalid"
+          id="foo"
+          name="foo"
+          type="range"
+          value="0"
+        />
+        <div
+          class="invalid-feedback"
+        >
+          The range value must be between 50 and 100
+        </div>
+        <small
+          class="form-text text-muted"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.
+        </small>
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Range Help Text 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Range field
+        </label>
+        <input
+          class="form-control-range"
+          id="foo"
+          name="foo"
+          type="range"
+          value=""
+        />
+        <div
+          class="invalid-feedback"
+        />
+        <small
+          class="form-text text-muted"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.
+        </small>
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Range Initial Value 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Range field
+        </label>
+        <input
+          class="form-control-range"
+          id="foo"
+          name="foo"
+          type="range"
+          value="75"
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Range Label 1`] = `
+<div
+  class="mt-5 ml-5 mr-5 row"
+>
+  <div
+    class="col-lg-6 col-md-8 col-sm-10 col-12"
+  >
+    <form
+      class=""
+    >
+      <div
+        class="form-group"
+        name="foo"
+      >
+        <label
+          class="form-label"
+          for="foo"
+        >
+          Range field
+        </label>
+        <input
+          class="form-control-range"
+          id="foo"
+          name="foo"
+          type="range"
+          value=""
+        />
+        <div
+          class="invalid-feedback"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

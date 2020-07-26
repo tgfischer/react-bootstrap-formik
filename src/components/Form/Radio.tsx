@@ -3,6 +3,7 @@ import { useField, useFormikContext, FormikProps } from "formik";
 import { Form } from "react-bootstrap";
 import classnames from "classnames";
 
+import { noop } from "../utils";
 import { GroupContext } from "./Group";
 import { FormCheckboxFieldProps } from "./types";
 
@@ -46,5 +47,5 @@ export const Radio: FC<FormCheckboxFieldProps> = ({
 };
 
 Radio.defaultProps = {
-  onChange: () => null
+  onChange: noop
 };

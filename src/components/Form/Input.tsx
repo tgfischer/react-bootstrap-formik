@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Form } from "react-bootstrap";
 import { useField } from "formik";
 
+import { noop } from "../utils";
 import { Group } from "./Group";
 import { FormInputFieldProps } from "./types";
 import { useChange } from "./hooks";
@@ -34,5 +35,5 @@ export const Input: FC<FormInputFieldProps> = ({
 };
 
 Input.defaultProps = {
-  onChange: () => null
+  onChange: noop
 };
