@@ -88,7 +88,7 @@
     "classnames": "^2.2.6",
     "formik": "^2.1.5",
     "react-bootstrap": "^1.2.2",
-    "yup": "^0.29.1"
+    "yup": "^0.29.2"
   },
   "repository": {
     "type": "git",
