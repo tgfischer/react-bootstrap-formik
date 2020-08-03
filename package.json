@@ -35,7 +35,7 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
+    "@babel/core": "^7.11.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
@@ -51,7 +51,7 @@
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^10.4.7",
     "@types/jest": "^26.0.8",
-    "@types/react": "^16.9.43",
+    "@types/react": "^16.9.44",
     "@types/react-bootstrap": "^1.0.1",
     "@types/react-dom": "^16.9.8",
     "@types/yup": "^0.29.3",
@@ -79,7 +79,7 @@
     "semantic-release": "^17.1.1",
     "style-loader": "^1.2.1",
     "ts-jest": "^26.1.4",
-    "ts-loader": "^8.0.1",
+    "ts-loader": "^8.0.2",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.7"
