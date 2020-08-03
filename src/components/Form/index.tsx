@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Form as BootstrapForm } from "react-bootstrap";
-import { Formik, FormikConfig, FormikValues } from "formik";
+import { Formik, FormikValues } from "formik";
 
-import { FormProps } from "./types";
+import { DerivedFormikProps, FormProps } from "./types";
 import { Group } from "./Group";
 import { Input } from "./Input";
 import { Select } from "./Select";
@@ -11,7 +11,9 @@ import { Checkbox } from "./Checkbox";
 import { Radio } from "./Radio";
 import { Range } from "./Range";
 
-type FormComponent = FC<FormikConfig<FormikValues>> & {
+export * from "./types";
+
+type FormComponent = FC<FormProps<FormikValues>> & {
   Group: typeof Group;
   Input: typeof Input;
   Textarea: typeof Textarea;
@@ -22,12 +24,15 @@ type FormComponent = FC<FormikConfig<FormikValues>> & {
 };
 
 export const Form: FormComponent = ({
+  className,
   children,
   ...props
-}: FormikConfig<FormikValues>) => (
+}: FormProps<FormikValues>) => (
   <Formik {...props}>
-    {({ handleSubmit }: FormProps<FormikValues>) => (
-      <BootstrapForm onSubmit={handleSubmit}>{children}</BootstrapForm>
+    {({ handleSubmit }: DerivedFormikProps<FormikValues>) => (
+      <BootstrapForm className={className} onSubmit={handleSubmit}>
+        {children}
+      </BootstrapForm>
     )}
   </Formik>
 );

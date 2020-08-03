@@ -1,8 +1,12 @@
 import { FormEvent, RefObject } from "react";
 import { FormControlProps, FormGroupProps } from "react-bootstrap";
-import { FormikProps } from "formik";
+import { FormikProps, FormikConfig } from "formik";
 
-export type FormProps<Values> = FormikProps<Values> & {
+export type FormProps<Values> = FormikConfig<Values> & {
+  className?: string;
+};
+
+export type DerivedFormikProps<Values> = FormikProps<Values> & {
   handleSubmit: (event: FormEvent<HTMLElement>) => void;
 };
 
@@ -23,7 +27,7 @@ export type FormInputFieldProps = FormControlProps &
   JSX.IntrinsicElements["input"] &
   FormFieldProps;
 
-export type FormTextareaFieldProps = FormControlProps &
+export type FormTextareaFieldProps = Omit<FormControlProps, "type"> &
   Omit<JSX.IntrinsicElements["textarea"], "ref"> &
   FormFieldProps & {
     ref?:
@@ -33,7 +37,7 @@ export type FormTextareaFieldProps = FormControlProps &
       | undefined;
   };
 
-export type FormSelectFieldProps = FormControlProps &
+export type FormSelectFieldProps = Omit<FormControlProps, "select"> &
   Omit<JSX.IntrinsicElements["select"], "ref"> &
   FormFieldProps & {
     ref?:
@@ -43,13 +47,10 @@ export type FormSelectFieldProps = FormControlProps &
       | undefined;
   };
 
-export type FormCheckboxFieldProps = FormControlProps &
+export type FormRangeFieldProps = Omit<FormInputFieldProps, "type">;
+
+export type FormCheckboxFieldProps = Omit<FormControlProps, "type"> &
   JSX.IntrinsicElements["input"] & {
     name: string;
     label: string;
   };
-
-export type BaseFormCheckboxFieldProps = FormCheckboxFieldProps & {
-  type: "radio" | "checkbox";
-  isChecked: boolean;
-};
