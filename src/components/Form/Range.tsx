@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
 import { Input } from "./Input";
-import { FormInputFieldProps } from "./types";
+import { FormRangeFieldProps } from "./types";
 
-export const Range: FC<FormInputFieldProps> = (props: FormInputFieldProps) => (
+export const Range: FC<FormRangeFieldProps> = (props: FormRangeFieldProps) => (
   <Input {...props} type="range" />
 );

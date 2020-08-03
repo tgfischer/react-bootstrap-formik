@@ -45,17 +45,6 @@ export const Placeholder: FC = () => (
   </SampleForm>
 );
 
-export const CustomType: FC = () => (
-  <SampleForm initialValues={{ number: "" }} onSubmit={action("onSubmit")}>
-    <Form.Textarea
-      name="number"
-      type="number"
-      label="Numeric Textarea"
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
 export const InitialValues: FC = () => (
   <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
     <Form.Textarea

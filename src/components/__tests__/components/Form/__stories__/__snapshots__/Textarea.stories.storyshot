@@ -45,51 +45,6 @@ exports[`Storyshots Textarea Custom Rows 1`] = `
 </div>
 `;
 
-exports[`Storyshots Textarea Custom Type 1`] = `
-<div
-  class="mt-5 ml-5 mr-5 row"
->
-  <div
-    class="col-lg-6 col-md-8 col-sm-10 col-12"
-  >
-    <form
-      class=""
-    >
-      <div
-        class="form-group"
-        name="number"
-      >
-        <label
-          class="form-label"
-          for="number"
-        >
-          Numeric Textarea
-        </label>
-        <textarea
-          class="form-control"
-          id="number"
-          name="number"
-          type="number"
-        />
-        <div
-          class="invalid-feedback"
-        />
-      </div>
-      <div
-        class="d-flex justify-content-end"
-      >
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Textarea Default 1`] = `
 <div
   class="mt-5 ml-5 mr-5 row"
