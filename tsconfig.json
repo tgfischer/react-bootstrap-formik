@@ -1,6 +1,6 @@
 {
-  "include": ["src", "types"],
-  "exclude": ["src/**/__tests__", "src/**/__stories__"],
+  "include": ["src"],
+  "exclude": ["src/**/__tests__", "src/**/__stories__", "dist", "node_modules"],
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],

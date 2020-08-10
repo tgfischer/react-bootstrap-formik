@@ -29,22 +29,14 @@ export type FormInputFieldProps = FormControlProps &
 
 export type FormTextareaFieldProps = Omit<FormControlProps, "type"> &
   Omit<JSX.IntrinsicElements["textarea"], "ref"> &
-  FormFieldProps & {
-    ref?:
-      | RefObject<HTMLTextAreaElement>
-      | ((instance: HTMLTextAreaElement | null) => void)
-      | null
-      | undefined;
-  };
+  FormFieldProps;
 
 export type FormSelectFieldProps = Omit<FormControlProps, "select"> &
   Omit<JSX.IntrinsicElements["select"], "ref"> &
   FormFieldProps & {
     ref?:
       | RefObject<HTMLSelectElement>
-      | ((instance: HTMLSelectElement | null) => void)
-      | null
-      | undefined;
+      | ((instance: HTMLSelectElement | null) => void);
   };
 
 export type FormRangeFieldProps = Omit<FormInputFieldProps, "type">;
