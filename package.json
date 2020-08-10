@@ -49,7 +49,7 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@testing-library/jest-dom": "^5.11.2",
-    "@testing-library/react": "^10.4.7",
+    "@testing-library/react": "^10.4.8",
     "@types/jest": "^26.0.9",
     "@types/react": "^16.9.44",
     "@types/react-bootstrap": "^1.0.1",
