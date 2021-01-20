@@ -10,6 +10,7 @@ import { useChange } from "./hooks";
 export const Input: FC<FormInputFieldProps> = ({
   label,
   helpText,
+  groupClassName,
   ...props
 }: FormInputFieldProps) => {
   const [{ name, value, onBlur }, { error }] = useField(props);
@@ -21,6 +22,7 @@ export const Input: FC<FormInputFieldProps> = ({
       label={label}
       helpText={helpText}
       error={error}
+      className={groupClassName}
     >
       <Form.Control
         {...props}

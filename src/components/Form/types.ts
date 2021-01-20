@@ -10,6 +10,10 @@ export type DerivedFormikProps<Values> = FormikProps<Values> & {
   handleSubmit: (event: FormEvent<HTMLElement>) => void;
 };
 
+export type FormFieldGroupWrapperProps = {
+  groupClassName: string;
+};
+
 export type FormFieldProps = {
   name: string;
   label?: string;
@@ -25,14 +29,17 @@ export type FormGroupFieldProps = FormGroupProps & {
 
 export type FormInputFieldProps = FormControlProps &
   JSX.IntrinsicElements["input"] &
+  FormFieldGroupWrapperProps &
   FormFieldProps;
 
 export type FormTextareaFieldProps = Omit<FormControlProps, "type"> &
   Omit<JSX.IntrinsicElements["textarea"], "ref"> &
+  FormFieldGroupWrapperProps &
   FormFieldProps;
 
 export type FormSelectFieldProps = Omit<FormControlProps, "select"> &
   Omit<JSX.IntrinsicElements["select"], "ref"> &
+  FormFieldGroupWrapperProps &
   FormFieldProps & {
     ref?:
       | RefObject<HTMLSelectElement>

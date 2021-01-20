@@ -12,6 +12,7 @@ export const Select: FC<FormSelectFieldProps> = ({
   helpText,
   placeholder,
   children,
+  groupClassName,
   ...props
 }: FormSelectFieldProps) => {
   const [{ name, value, onBlur }, { error }] = useField(props);
@@ -23,6 +24,7 @@ export const Select: FC<FormSelectFieldProps> = ({
       label={label}
       helpText={helpText}
       error={error}
+      className={groupClassName}
     >
       <Form.Control
         {...props}

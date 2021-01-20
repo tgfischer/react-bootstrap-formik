@@ -10,6 +10,7 @@ import { useChange } from "./hooks";
 export const Textarea: FC<FormTextareaFieldProps> = ({
   label,
   helpText,
+  groupClassName,
   ...props
 }: FormTextareaFieldProps) => {
   const [{ name, value, onBlur }, { error }] = useField(props);
@@ -21,6 +22,7 @@ export const Textarea: FC<FormTextareaFieldProps> = ({
       label={label}
       helpText={helpText}
       error={error}
+      className={groupClassName}
     >
       <Form.Control
         {...props}
