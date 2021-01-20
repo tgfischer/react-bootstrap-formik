@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Form as BootstrapForm } from "react-bootstrap";
-import { Formik, FormikValues } from "formik";
+import { Formik, FormikValues, FormikProps } from "formik";
 
 import { DerivedFormikProps, FormProps } from "./types";
 import { Group } from "./Group";
@@ -29,9 +29,16 @@ export const Form: FormComponent = ({
   ...props
 }: FormProps<FormikValues>) => (
   <Formik {...props}>
-    {({ handleSubmit }: DerivedFormikProps<FormikValues>) => (
-      <BootstrapForm className={className} onSubmit={handleSubmit}>
-        {children}
+    {(formikProps: DerivedFormikProps<FormikValues>) => (
+      <BootstrapForm className={className} onSubmit={formikProps.handleSubmit}>
+        {(typeof children === 'function')
+          ? (children as (formikProps: FormikProps<FormikValues>) => React.ReactNode)(
+            formikProps as FormikProps<FormikValues>
+          )
+          : React.Children.count(children) === 1
+          ? React.Children.only(children)
+          : null
+        }
       </BootstrapForm>
     )}
   </Formik>
