@@ -31,3 +31,17 @@ yarn add react-bootstrap-formik formik bootstrap react-bootstrap yup
 * `<Checkbox />`
 * `<Radio />`
 * `<Range />`
+
+### Example Usage
+
+```ruby
+import FormikForm from 'react-bootstrap-formik';
+
+const Component = (props) => (
+  <FormikForm
+    initialValues={foo: "Bar"}
+  >
+    <FormikForm.Input name="foo">
+  </FormikForm>
+)
+```
