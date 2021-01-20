@@ -10,6 +10,7 @@ import { Textarea } from "./Textarea";
 import { Checkbox } from "./Checkbox";
 import { Radio } from "./Radio";
 import { Range } from "./Range";
+import { Submit } from "./Submit";
 
 export * from "./types";
 
@@ -21,6 +22,7 @@ type FormComponent = FC<FormProps<FormikValues>> & {
   Checkbox: typeof Checkbox;
   Radio: typeof Radio;
   Range: typeof Range;
+  Submit: typeof Submit;
 };
 
 export const Form: FormComponent = ({
@@ -31,14 +33,13 @@ export const Form: FormComponent = ({
   <Formik {...props}>
     {(formikProps: DerivedFormikProps<FormikValues>) => (
       <BootstrapForm className={className} onSubmit={formikProps.handleSubmit}>
-        {(typeof children === 'function')
-          ? (children as (formikProps: FormikProps<FormikValues>) => React.ReactNode)(
-            formikProps as FormikProps<FormikValues>
-          )
+        {typeof children === "function"
+          ? (children as (
+              formikProps: FormikProps<FormikValues>
+            ) => React.ReactNode)(formikProps as FormikProps<FormikValues>)
           : React.Children.count(children) === 1
           ? React.Children.only(children)
-          : null
-        }
+          : null}
       </BootstrapForm>
     )}
   </Formik>
@@ -51,3 +52,4 @@ Form.Select = Select;
 Form.Checkbox = Checkbox;
 Form.Radio = Radio;
 Form.Range = Range;
+Form.Submit = Submit;
