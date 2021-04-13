@@ -12,7 +12,7 @@ export const Textarea: FC<FormTextareaFieldProps> = ({
   helpText,
   ...props
 }: FormTextareaFieldProps) => {
-  const [{ name, value, onBlur }, { error }] = useField(props);
+  const [{ name, value, onBlur }, { error, touched }] = useField(props);
   const handleChange = useChange(props);
   return (
     <Group
@@ -27,7 +27,7 @@ export const Textarea: FC<FormTextareaFieldProps> = ({
         as="textarea"
         name={name}
         value={value?.toString()}
-        isInvalid={!!error}
+        isInvalid={Boolean(error) && touched}
         onChange={handleChange}
         onBlur={onBlur}
       />

@@ -11,18 +11,23 @@ export const Radio: FC<FormCheckboxFieldProps> = ({
   custom,
   ...props
 }: FormCheckboxFieldProps) => {
-  const { values, errors, setFieldValue } = useFormikContext<
-    FormikProps<FormCheckboxFieldProps>
-  >();
+  const {
+    values,
+    errors,
+    touched,
+    setFieldValue,
+    setFieldTouched
+  } = useFormikContext<FormikProps<FormCheckboxFieldProps>>();
   const { name: groupName = "" } = useContext(GroupContext);
   const [{ name, onBlur }] = useField(props);
-  const isInvalid = !!errors[groupName];
+  const isInvalid = Boolean(errors[groupName]) && touched[groupName];
   const handleChange = useCallback(
     (e) => {
       props.onChange!(e);
+      setFieldTouched(groupName, true);
       setFieldValue(groupName, name);
     },
-    [groupName, name, props.onChange, setFieldValue]
+    [groupName, name, props.onChange, setFieldTouched, setFieldValue]
   );
   return (
     <Form.Check

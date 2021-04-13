@@ -12,7 +12,7 @@ export const Input: FC<FormInputFieldProps> = ({
   helpText,
   ...props
 }: FormInputFieldProps) => {
-  const [{ name, value, onBlur }, { error }] = useField(props);
+  const [{ name, value, onBlur }, { error, touched }] = useField(props);
   const handleChange = useChange(props);
   return (
     <Group
@@ -26,7 +26,7 @@ export const Input: FC<FormInputFieldProps> = ({
         {...props}
         name={name}
         value={value?.toString()}
-        isInvalid={!!error}
+        isInvalid={Boolean(error) && touched}
         onChange={handleChange}
         onBlur={onBlur}
       />

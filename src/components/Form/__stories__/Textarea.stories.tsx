@@ -70,6 +70,7 @@ export const ErrorFeedback: FC = () => (
   <SampleForm
     initialValues={{ foo: "" }}
     initialErrors={{ foo: "This field is required" }}
+    initialTouched={{ foo: true }}
     validationSchema={yup.object({ foo: yup.string().required() })}
     onSubmit={action("onSubmit")}
   >

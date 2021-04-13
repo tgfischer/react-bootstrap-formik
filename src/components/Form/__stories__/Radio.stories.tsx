@@ -71,6 +71,7 @@ export const ErrorFeedback: FC = () => (
   <SampleForm
     initialValues={initialValues}
     initialErrors={{ foo: "You must select at least one option" }}
+    initialTouched={{ foo: true }}
     validationSchema={yup.object({
       foo: yup.string().required()
     })}
