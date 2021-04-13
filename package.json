@@ -27,7 +27,7 @@
     "formik": ">=2.1",
     "react": ">=16",
     "react-bootstrap": ">=1.2",
-    "yup": ">=0.29"
+    "yup": ">=0.32"
   },
   "husky": {
     "hooks": {
@@ -85,7 +85,7 @@
     "classnames": "^2.2.6",
     "formik": ">=2.1",
     "react-bootstrap": ">=1.2",
-    "yup": ">=0.29"
+    "yup": ">=0.32"
   },
   "repository": {
     "type": "git",
