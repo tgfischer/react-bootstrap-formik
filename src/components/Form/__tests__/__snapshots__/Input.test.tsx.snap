@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input tests should not show the error feedback if the input has not been touched 1`] = `
+<form
+  class=""
+>
+  <div
+    class="form-group"
+    name="input1"
+  >
+    <label
+      class="form-label"
+      for="input1"
+    >
+      Input 1
+    </label>
+    <input
+      class="form-control"
+      id="input1"
+      name="input1"
+      value=""
+    />
+    <div
+      class="invalid-feedback"
+    />
+  </div>
+  <div
+    class="form-group"
+    name="input2"
+  >
+    <label
+      class="form-label"
+      for="input2"
+    >
+      Input 2
+    </label>
+    <input
+      class="form-control"
+      id="input2"
+      name="input2"
+      value="batman"
+    />
+    <div
+      class="invalid-feedback"
+    />
+  </div>
+  <div
+    class="d-flex justify-content-end"
+  >
+    <button
+      class="btn btn-primary"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;

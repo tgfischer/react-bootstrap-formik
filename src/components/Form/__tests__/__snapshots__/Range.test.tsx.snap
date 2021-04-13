@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Range tests should not show the error feedback if the range has not been touched 1`] = `
+<form
+  class=""
+>
+  <div
+    class="form-group"
+    name="range"
+  >
+    <label
+      class="form-label"
+      for="range"
+    >
+      Range field
+    </label>
+    <input
+      class="form-control-range"
+      id="range"
+      name="range"
+      type="range"
+      value=""
+    />
+    <div
+      class="invalid-feedback"
+    />
+  </div>
+  <div
+    class="form-group"
+    name="text"
+  >
+    <label
+      class="form-label"
+      for="text"
+    >
+      Text
+    </label>
+    <input
+      class="form-control"
+      id="text"
+      name="text"
+      value="foo"
+    />
+    <div
+      class="invalid-feedback"
+    />
+  </div>
+  <div
+    class="d-flex justify-content-end"
+  >
+    <button
+      class="btn btn-primary"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;

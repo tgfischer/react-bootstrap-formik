@@ -28,7 +28,8 @@
     "recommendations": [
       "esbenp.prettier-vscode",
       "dbaeumer.vscode-eslint",
-      "basarat.god"
+      "basarat.god",
+      "firsttris.vscode-jest-runner"
     ]
   }
 }
