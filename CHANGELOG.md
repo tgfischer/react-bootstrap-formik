@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.6.2...v1.6.3) (2021-04-13)
+
+
+### Bug Fixes
+
+* **issue-186:** do not validate fields until they are touched ([#192](https://github.com/tgfischer/react-bootstrap-formik/issues/192)) ([a4b4ec4](https://github.com/tgfischer/react-bootstrap-formik/commit/a4b4ec49c57019839b13ccd7e686697af5236b40))
+
 ## [1.6.2](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.6.1...v1.6.2) (2021-01-09)
 
 
