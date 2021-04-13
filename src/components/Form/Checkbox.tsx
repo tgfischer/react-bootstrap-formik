@@ -11,9 +11,13 @@ export const Checkbox: FC<FormCheckboxFieldProps> = ({
   custom,
   ...props
 }: FormCheckboxFieldProps) => {
-  const { values, errors, setFieldValue } = useFormikContext<
-    FormikProps<FormCheckboxFieldProps>
-  >();
+  const {
+    values,
+    errors,
+    touched,
+    setFieldValue,
+    setFieldTouched
+  } = useFormikContext<FormikProps<FormCheckboxFieldProps>>();
   const { name: groupName = "" } = useContext(GroupContext);
   const [{ name, onBlur }] = useField(props);
   const isChecked = useMemo(() => values[groupName].includes(name), [
@@ -21,10 +25,11 @@ export const Checkbox: FC<FormCheckboxFieldProps> = ({
     name,
     values
   ]);
-  const isInvalid = !!errors[groupName];
+  const isInvalid = Boolean(errors[groupName]) && touched[groupName];
   const handleChange = useCallback(
     (e) => {
       props.onChange!(e);
+      setFieldTouched(groupName, true);
       setFieldValue(
         groupName,
         isChecked
@@ -32,7 +37,7 @@ export const Checkbox: FC<FormCheckboxFieldProps> = ({
           : [...values[groupName], name]
       );
     },
-    [groupName, isChecked, name, props.onChange, setFieldValue, values]
+    [groupName, isChecked, name, props, setFieldTouched, setFieldValue, values]
   );
   return (
     <Form.Check

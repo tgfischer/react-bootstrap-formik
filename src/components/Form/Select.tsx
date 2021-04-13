@@ -14,7 +14,7 @@ export const Select: FC<FormSelectFieldProps> = ({
   children,
   ...props
 }: FormSelectFieldProps) => {
-  const [{ name, value, onBlur }, { error }] = useField(props);
+  const [{ name, value, onBlur }, { error, touched }] = useField(props);
   const handleChange = useChange(props);
   return (
     <Group
@@ -29,7 +29,7 @@ export const Select: FC<FormSelectFieldProps> = ({
         as="select"
         name={name}
         value={value?.toString()}
-        isInvalid={!!error}
+        isInvalid={Boolean(error) && touched}
         onChange={handleChange}
         onBlur={onBlur}
       >

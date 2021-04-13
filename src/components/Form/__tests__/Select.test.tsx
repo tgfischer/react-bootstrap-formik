@@ -73,6 +73,42 @@ describe("Select tests", () => {
     expect(handleSubmit).not.toHaveBeenCalled();
   });
 
+  it("should not show the error feedback if the select has not been touched", async () => {
+    const { container, getByText, getByLabelText } = render(
+      <SampleForm
+        initialValues={{ select: "", text: "" }}
+        validationSchema={yup
+          .object({
+            select: yup.string().required(),
+            text: yup.string().required()
+          })
+          .required()}
+        onSubmit={handleSubmit}
+      >
+        <Form.Select
+          name="select"
+          label="Select field"
+          placeholder="Please select a value..."
+        >
+          <Options />
+        </Form.Select>
+        <Form.Input name="text" label="Text" />
+      </SampleForm>
+    );
+
+    // Ensure that the error feedback is empty
+    fireEvent.change(getByLabelText("Text"), { target: { value: "foo" } });
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Ensure that the error feedback is set
+    fireEvent.click(getByText("Submit"));
+    await waitFor(() =>
+      expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
+        "select is a required field"
+      )
+    );
+  });
+
   it("should call on change event", async () => {
     const { getByLabelText } = render(
       <SampleForm initialValues={{ select: "" }} onSubmit={handleSubmit}>

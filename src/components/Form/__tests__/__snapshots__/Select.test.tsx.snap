@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select tests should not show the error feedback if the select has not been touched 1`] = `
+<form
+  class=""
+>
+  <div
+    class="form-group"
+    name="select"
+  >
+    <label
+      class="form-label"
+      for="select"
+    >
+      Select field
+    </label>
+    <select
+      class="form-control"
+      id="select"
+      name="select"
+    >
+      <option
+        disabled=""
+        value=""
+      >
+        Please select a value...
+      </option>
+      <option
+        value="value1"
+      >
+        Value 1
+      </option>
+      <option
+        value="value2"
+      >
+        Value 2
+      </option>
+      <option
+        value="value3"
+      >
+        Value 3
+      </option>
+      <option
+        value="value4"
+      >
+        Value 4
+      </option>
+      <option
+        value="value5"
+      >
+        Value 5
+      </option>
+    </select>
+    <div
+      class="invalid-feedback"
+    />
+  </div>
+  <div
+    class="form-group"
+    name="text"
+  >
+    <label
+      class="form-label"
+      for="text"
+    >
+      Text
+    </label>
+    <input
+      class="form-control"
+      id="text"
+      name="text"
+      value="foo"
+    />
+    <div
+      class="invalid-feedback"
+    />
+  </div>
+  <div
+    class="d-flex justify-content-end"
+  >
+    <button
+      class="btn btn-primary"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;

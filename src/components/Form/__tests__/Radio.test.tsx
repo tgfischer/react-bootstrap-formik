@@ -84,6 +84,37 @@ describe("Radio tests", () => {
     expect(handleSubmit).not.toHaveBeenCalled();
   });
 
+  it("should not show the error feedback if the radio has not been touched", async () => {
+    const { container, getByText, getByLabelText } = render(
+      <SampleForm
+        initialValues={{ text: "", radio: "" }}
+        validationSchema={yup.object({
+          text: yup.string().required(),
+          radio: yup.string().required()
+        })}
+        onSubmit={handleSubmit}
+      >
+        <Form.Group name="radio">
+          <Form.Radio name="radio1" label="Radio 1" />
+          <Form.Radio name="radio2" label="Radio 2" />
+        </Form.Group>
+        <Form.Input name="text" label="Text" />
+      </SampleForm>
+    );
+
+    // Ensure that the error feedback is empty
+    fireEvent.change(getByLabelText("Text"), { target: { value: "foo" } });
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Ensure that the error feedback is set
+    fireEvent.click(getByText("Submit"));
+    await waitFor(() =>
+      expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
+        "radio is a required field"
+      )
+    );
+  });
+
   it("should call on change event", async () => {
     const { getByLabelText } = render(
       <SampleForm initialValues={{ radio: "" }} onSubmit={handleSubmit}>

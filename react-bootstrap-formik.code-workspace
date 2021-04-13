@@ -10,6 +10,26 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": true
     },
-    "http.proxySupport": "off"
+    "editor.formatOnSave": true,
+    "[typescript]": {
+      "editor.formatOnSave": false
+    },
+    "[javascript]": {
+      "editor.formatOnSave": false
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.exclude": {
+      "**/.git": false
+    },
+    "typescript.validate.enable": true,
+    "typescript.tsdk": "./node_modules/typescript/lib"
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "basarat.god",
+      "firsttris.vscode-jest-runner"
+    ]
   }
 }

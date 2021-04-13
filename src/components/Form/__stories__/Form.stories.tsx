@@ -24,12 +24,7 @@ export const Login: FC = () => (
       .required()}
     onSubmit={action("onSubmit")}
   >
-    <Form.Input
-      name="email"
-      type="email"
-      label="Email"
-      onChange={action("onChange")}
-    />
+    <Form.Input name="email" label="Email" onChange={action("onChange")} />
     <Form.Input
       name="password"
       type="password"

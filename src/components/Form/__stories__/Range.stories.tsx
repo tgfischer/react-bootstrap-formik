@@ -64,6 +64,7 @@ export const ErrorFeedback: FC = () => (
   <SampleForm
     initialValues={{ foo: 0 }}
     initialErrors={{ foo: errorMessage }}
+    initialTouched={{ foo: true }}
     validationSchema={yup
       .object({
         foo: yup

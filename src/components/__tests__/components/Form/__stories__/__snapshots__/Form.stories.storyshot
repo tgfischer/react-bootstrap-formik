@@ -24,7 +24,6 @@ exports[`Storyshots Samples Login 1`] = `
           class="form-control"
           id="email"
           name="email"
-          type="email"
           value=""
         />
         <div
