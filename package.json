@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "bootstrap": ">=4",
-    "formik": ">=2.1",
+    "formik": ">=2.2",
     "react": ">=16",
     "react-bootstrap": ">=1.2",
     "yup": ">=0.29"
@@ -83,7 +83,7 @@
   "dependencies": {
     "bootstrap": ">=4",
     "classnames": "^2.2.6",
-    "formik": ">=2.1",
+    "formik": ">=2.2",
     "react-bootstrap": ">=1.2",
     "yup": ">=0.29"
   },
