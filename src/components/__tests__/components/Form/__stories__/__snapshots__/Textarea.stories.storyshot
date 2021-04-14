@@ -154,9 +154,7 @@ exports[`Storyshots Textarea Help Text 1`] = `
           class="form-control"
           id="foo"
           name="foo"
-        >
-          Hello, World!
-        </textarea>
+        />
         <div
           class="invalid-feedback"
         />

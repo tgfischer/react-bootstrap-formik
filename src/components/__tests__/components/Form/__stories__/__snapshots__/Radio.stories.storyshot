@@ -123,7 +123,7 @@ exports[`Storyshots Radio Error Feedback 1`] = `
         <div
           class="invalid-feedback"
         >
-          You must select at least one option
+          You must select an option
         </div>
       </div>
       <div

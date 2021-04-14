@@ -1,84 +1,92 @@
-import React, { FC } from "react";
+import React from "react";
 import { action } from "@storybook/addon-actions";
 import * as yup from "yup";
+import { FormikConfig, FormikValues } from "formik";
+import { Story, Meta } from "@storybook/react";
 
 import { SampleForm } from "../__tests__/SampleForm";
-import { Form } from "../../../index";
+import {
+  Form,
+  FormCheckboxFieldProps,
+  FormGroupFieldProps
+} from "../../../index";
 
-export default {
+const meta: Meta = {
   title: "Radio",
   component: Form.Radio,
   subcomponents: { Form, Group: Form.Group }
 };
 
-const initialValues = { foo: "" };
+export default meta;
 
 const label = "Select from the options below";
 
 const helpText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.";
 
-const RadioButtons: FC = () => (
-  <>
-    <Form.Radio
-      name="radio1"
-      label="Radio 1"
-      onChange={action("onChange")}
-      custom
-    />
-    <Form.Radio
-      name="radio2"
-      label="Radio 2"
-      onChange={action("onChange")}
-      custom
-    />
-  </>
-);
+type StoryOptions = Partial<FormikConfig<FormikValues>> &
+  Partial<FormGroupFieldProps> &
+  Partial<FormCheckboxFieldProps>;
 
-export const Default: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Group name="foo">
-      <RadioButtons />
-    </Form.Group>
-  </SampleForm>
-);
-
-export const Label: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Group name="foo" label={label}>
-      <RadioButtons />
-    </Form.Group>
-  </SampleForm>
-);
-
-export const InitialValues: FC = () => (
-  <SampleForm initialValues={{ foo: "radio2" }} onSubmit={action("onSubmit")}>
-    <Form.Group name="foo" label={label}>
-      <RadioButtons />
-    </Form.Group>
-  </SampleForm>
-);
-
-export const HelpText: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Group name="foo" label={label} helpText={helpText}>
-      <RadioButtons />
-    </Form.Group>
-  </SampleForm>
-);
-
-export const ErrorFeedback: FC = () => (
+const Template: Story<StoryOptions> = ({
+  name = "foo",
+  label,
+  helpText,
+  initialValues = { [name]: "" },
+  initialErrors,
+  initialTouched,
+  validationSchema
+}) => (
   <SampleForm
     initialValues={initialValues}
-    initialErrors={{ foo: "You must select at least one option" }}
-    initialTouched={{ foo: true }}
-    validationSchema={yup.object({
-      foo: yup.string().required()
-    })}
+    initialErrors={initialErrors}
+    initialTouched={initialTouched}
+    validationSchema={validationSchema}
     onSubmit={action("onSubmit")}
   >
-    <Form.Group name="foo" label={label}>
-      <RadioButtons />
+    <Form.Group name={name} label={label} helpText={helpText}>
+      <Form.Radio
+        name="radio1"
+        label="Radio 1"
+        onChange={action("onChange")}
+        custom
+      />
+      <Form.Radio
+        name="radio2"
+        label="Radio 2"
+        onChange={action("onChange")}
+        custom
+      />
     </Form.Group>
   </SampleForm>
 );
+
+export const Default = Template.bind({});
+Default.args = {};
+
+export const Label = Template.bind({});
+Label.args = {
+  label
+};
+
+export const InitialValues = Template.bind({});
+InitialValues.args = {
+  label,
+  initialValues: { foo: "radio2" }
+};
+
+export const HelpText = Template.bind({});
+HelpText.args = {
+  label,
+  helpText
+};
+
+export const ErrorFeedback = Template.bind({});
+ErrorFeedback.args = {
+  label,
+  initialErrors: { foo: "You must select an option" },
+  initialTouched: { foo: true },
+  validationSchema: yup.object({
+    foo: yup.string().required()
+  })
+};
