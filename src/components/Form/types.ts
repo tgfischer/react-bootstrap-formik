@@ -1,6 +1,6 @@
+import { FormikProps, FormikConfig } from "formik";
 import { FormEvent, RefObject } from "react";
 import { FormControlProps, FormGroupProps } from "react-bootstrap";
-import { FormikProps, FormikConfig } from "formik";
 
 export type FormProps<Values> = FormikConfig<Values> & {
   className?: string;

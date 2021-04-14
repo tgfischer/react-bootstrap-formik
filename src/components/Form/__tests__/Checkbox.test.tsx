@@ -1,13 +1,10 @@
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import React from "react";
 import * as yup from "yup";
-import { render, fireEvent, waitFor } from "@testing-library/react";
 
 import { Form } from "../../../index";
-import { SampleForm } from "./SampleForm";
 
-type ActionType = {
-  getByLabelText: (text: string) => HTMLElement;
-};
+import { SampleForm } from "./SampleForm";
 
 describe("Checkbox tests", () => {
   const handleSubmit = jest.fn();
@@ -16,38 +13,38 @@ describe("Checkbox tests", () => {
   it.each([
     [
       "should toggle the checkbox once",
-      ({ getByLabelText }: ActionType) => {
-        fireEvent.click(getByLabelText("Checkbox 1"));
+      () => {
+        fireEvent.click(screen.getByLabelText("Checkbox 1"));
       },
       ["checkbox1"]
     ],
     [
       "should toggle the checkbox two times",
-      ({ getByLabelText }: ActionType) => {
-        fireEvent.click(getByLabelText("Checkbox 1"));
-        fireEvent.click(getByLabelText("Checkbox 1"));
+      () => {
+        fireEvent.click(screen.getByLabelText("Checkbox 1"));
+        fireEvent.click(screen.getByLabelText("Checkbox 1"));
       },
       []
     ],
     [
       "should toggle the checkbox three times",
-      ({ getByLabelText }: ActionType) => {
-        fireEvent.click(getByLabelText("Checkbox 1"));
-        fireEvent.click(getByLabelText("Checkbox 1"));
-        fireEvent.click(getByLabelText("Checkbox 1"));
+      () => {
+        fireEvent.click(screen.getByLabelText("Checkbox 1"));
+        fireEvent.click(screen.getByLabelText("Checkbox 1"));
+        fireEvent.click(screen.getByLabelText("Checkbox 1"));
       },
       ["checkbox1"]
     ],
     [
       "should toggle multiple checkboxes",
-      ({ getByLabelText }: ActionType) => {
-        fireEvent.click(getByLabelText("Checkbox 1"));
-        fireEvent.click(getByLabelText("Checkbox 2"));
+      () => {
+        fireEvent.click(screen.getByLabelText("Checkbox 1"));
+        fireEvent.click(screen.getByLabelText("Checkbox 2"));
       },
       ["checkbox1", "checkbox2"]
     ]
   ])("%s", async (_, action, expectedValue) => {
-    const { getByText, ...instance } = render(
+    render(
       <SampleForm initialValues={{ checkbox: [] }} onSubmit={handleSubmit}>
         <Form.Group name="checkbox">
           <Form.Checkbox name="checkbox1" label="Checkbox 1" />
@@ -56,8 +53,8 @@ describe("Checkbox tests", () => {
       </SampleForm>
     );
 
-    action(instance);
-    fireEvent.click(getByText("Submit"));
+    action();
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith(
@@ -68,11 +65,11 @@ describe("Checkbox tests", () => {
   });
 
   it("should show the error feedback message", async () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ checkbox: [] }}
         validationSchema={yup.object({
-          checkbox: yup.array().of(yup.string().required()).required()
+          checkbox: yup.array().of(yup.string().required()).min(1).required()
         })}
         onSubmit={handleSubmit}
       >
@@ -83,23 +80,23 @@ describe("Checkbox tests", () => {
       </SampleForm>
     );
 
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
-        "checkbox is a required field"
+        "checkbox field must have at least 1 items"
       )
     );
     expect(handleSubmit).not.toHaveBeenCalled();
   });
 
   it("should not show the error feedback if the checkbox has not been touched", async () => {
-    const { container, getByLabelText, getByText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ text: "", checkbox: [] }}
         validationSchema={yup.object({
           text: yup.string().required(),
-          checkbox: yup.array().of(yup.string().required()).required()
+          checkbox: yup.array().of(yup.string().required()).min(1).required()
         })}
         onSubmit={handleSubmit}
       >
@@ -112,20 +109,22 @@ describe("Checkbox tests", () => {
     );
 
     // Ensure that the error feedback is empty
-    fireEvent.change(getByLabelText("Text"), { target: { value: "foo" } });
+    fireEvent.change(screen.getByLabelText("Text"), {
+      target: { value: "foo" }
+    });
     expect(container.firstChild).toMatchSnapshot();
 
     // Ensure that the error feedback is set
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
-        "checkbox is a required field"
+        "checkbox field must have at least 1 items"
       )
     );
   });
 
   it("should call on change event", async () => {
-    const { getByLabelText } = render(
+    render(
       <SampleForm initialValues={{ checkbox: [] }} onSubmit={handleSubmit}>
         <Form.Group name="checkbox">
           <Form.Checkbox
@@ -142,7 +141,7 @@ describe("Checkbox tests", () => {
       </SampleForm>
     );
 
-    fireEvent.click(getByLabelText("Checkbox 1"));
+    fireEvent.click(screen.getByLabelText("Checkbox 1"));
 
     await waitFor(() =>
       expect(handleChange).toHaveBeenCalledWith(expect.any(Object))

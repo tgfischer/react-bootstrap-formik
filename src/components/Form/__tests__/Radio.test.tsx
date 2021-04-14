@@ -1,13 +1,10 @@
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import React from "react";
 import * as yup from "yup";
-import { render, fireEvent, waitFor } from "@testing-library/react";
 
 import { Form } from "../../../index";
-import { SampleForm } from "./SampleForm";
 
-type ActionType = {
-  getByLabelText: (text: string) => HTMLElement;
-};
+import { SampleForm } from "./SampleForm";
 
 describe("Radio tests", () => {
   const handleSubmit = jest.fn();
@@ -16,29 +13,29 @@ describe("Radio tests", () => {
   it.each([
     [
       "should click the radio button once",
-      ({ getByLabelText }: ActionType) => {
-        fireEvent.click(getByLabelText("Radio 1"));
+      () => {
+        fireEvent.click(screen.getByLabelText("Radio 1"));
       },
       "radio1"
     ],
     [
       "should click the radio button two times",
-      ({ getByLabelText }: ActionType) => {
-        fireEvent.click(getByLabelText("Radio 1"));
-        fireEvent.click(getByLabelText("Radio 1"));
+      () => {
+        fireEvent.click(screen.getByLabelText("Radio 1"));
+        fireEvent.click(screen.getByLabelText("Radio 1"));
       },
       "radio1"
     ],
     [
       "should click multiple radio buttons",
-      ({ getByLabelText }: ActionType) => {
-        fireEvent.click(getByLabelText("Radio 1"));
-        fireEvent.click(getByLabelText("Radio 2"));
+      () => {
+        fireEvent.click(screen.getByLabelText("Radio 1"));
+        fireEvent.click(screen.getByLabelText("Radio 2"));
       },
       "radio2"
     ]
   ])("%s", async (_, action, expectedValue) => {
-    const { getByText, ...instance } = render(
+    render(
       <SampleForm initialValues={{ radio: "" }} onSubmit={handleSubmit}>
         <Form.Group name="radio">
           <Form.Radio name="radio1" label="Radio 1" />
@@ -47,8 +44,8 @@ describe("Radio tests", () => {
       </SampleForm>
     );
 
-    action(instance);
-    fireEvent.click(getByText("Submit"));
+    action();
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith(
@@ -59,7 +56,7 @@ describe("Radio tests", () => {
   });
 
   it("should show the error feedback message", async () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ radio: "" }}
         validationSchema={yup.object({
@@ -74,7 +71,7 @@ describe("Radio tests", () => {
       </SampleForm>
     );
 
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
@@ -85,7 +82,7 @@ describe("Radio tests", () => {
   });
 
   it("should not show the error feedback if the radio has not been touched", async () => {
-    const { container, getByText, getByLabelText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ text: "", radio: "" }}
         validationSchema={yup.object({
@@ -103,11 +100,13 @@ describe("Radio tests", () => {
     );
 
     // Ensure that the error feedback is empty
-    fireEvent.change(getByLabelText("Text"), { target: { value: "foo" } });
+    fireEvent.change(screen.getByLabelText("Text"), {
+      target: { value: "foo" }
+    });
     expect(container.firstChild).toMatchSnapshot();
 
     // Ensure that the error feedback is set
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
         "radio is a required field"
@@ -116,7 +115,7 @@ describe("Radio tests", () => {
   });
 
   it("should call on change event", async () => {
-    const { getByLabelText } = render(
+    render(
       <SampleForm initialValues={{ radio: "" }} onSubmit={handleSubmit}>
         <Form.Group name="radio">
           <Form.Radio name="radio1" label="Radio 1" onChange={handleChange} />
@@ -125,7 +124,7 @@ describe("Radio tests", () => {
       </SampleForm>
     );
 
-    fireEvent.click(getByLabelText("Radio 1"));
+    fireEvent.click(screen.getByLabelText("Radio 1"));
 
     await waitFor(() =>
       expect(handleChange).toHaveBeenCalledWith(expect.any(Object))
