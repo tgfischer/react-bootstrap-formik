@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.6.3...v1.7.0) (2021-04-14)
+
+
+### Features
+
+* **issue-217:** upgrade to react 17 ([#218](https://github.com/tgfischer/react-bootstrap-formik/issues/218)) ([48dd68f](https://github.com/tgfischer/react-bootstrap-formik/commit/48dd68f49eeaa441f6a8aee933a6783049862521))
+
 ## [1.6.3](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.6.2...v1.6.3) (2021-04-13)
 
 
