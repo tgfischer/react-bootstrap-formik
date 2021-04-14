@@ -25,7 +25,7 @@ exports[`Storyshots Range Custom 1`] = `
           id="foo"
           name="foo"
           type="range"
-          value=""
+          value="0"
         />
         <div
           class="invalid-feedback"
@@ -65,7 +65,7 @@ exports[`Storyshots Range Default 1`] = `
           id="foo"
           name="foo"
           type="range"
-          value=""
+          value="0"
         />
         <div
           class="invalid-feedback"
@@ -110,6 +110,7 @@ exports[`Storyshots Range Error Feedback 1`] = `
           class="form-control-range is-invalid"
           id="foo"
           name="foo"
+          required=""
           type="range"
           value="0"
         />
@@ -118,11 +119,6 @@ exports[`Storyshots Range Error Feedback 1`] = `
         >
           The range value must be between 50 and 100
         </div>
-        <small
-          class="form-text text-muted"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.
-        </small>
       </div>
       <div
         class="d-flex justify-content-end"
@@ -164,7 +160,7 @@ exports[`Storyshots Range Help Text 1`] = `
           id="foo"
           name="foo"
           type="range"
-          value=""
+          value="0"
         />
         <div
           class="invalid-feedback"
@@ -261,7 +257,7 @@ exports[`Storyshots Range Label 1`] = `
           id="foo"
           name="foo"
           type="range"
-          value=""
+          value="0"
         />
         <div
           class="invalid-feedback"

@@ -12,18 +12,18 @@ exports[`Storyshots Input Custom Type 1`] = `
     >
       <div
         class="form-group"
-        name="number"
+        name="foo"
       >
         <label
           class="form-label"
-          for="number"
+          for="foo"
         >
           Numeric input
         </label>
         <input
           class="form-control"
-          id="number"
-          name="number"
+          id="foo"
+          name="foo"
           type="number"
           value=""
         />
@@ -157,7 +157,7 @@ exports[`Storyshots Input Help Text 1`] = `
           class="form-control"
           id="foo"
           name="foo"
-          value="Hello, World!"
+          value=""
         />
         <div
           class="invalid-feedback"

@@ -22,6 +22,7 @@
   },
   "rules": {
     "@typescript-eslint/no-non-null-assertion": "off",
-    "no-sequences": "off"
+    "no-sequences": "off",
+    "react/prop-types": "off"
   }
 }

@@ -88,6 +88,7 @@ exports[`Storyshots Select Error Feedback 1`] = `
           class="form-control is-invalid"
           id="foo"
           name="foo"
+          required=""
         >
           <option
             disabled=""

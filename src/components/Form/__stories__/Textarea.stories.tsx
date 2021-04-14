@@ -1,95 +1,96 @@
-import React, { FC } from "react";
+import React from "react";
 import * as yup from "yup";
 import { action } from "@storybook/addon-actions";
+import { FormikConfig, FormikValues } from "formik";
+import { Story, Meta } from "@storybook/react";
 
 import { SampleForm } from "../__tests__/SampleForm";
-import { Form } from "../../../index";
+import { Form, FormTextareaFieldProps } from "../../../index";
 
-export default {
+const meta: Meta = {
   title: "Textarea",
   component: Form.Textarea,
   subcomponents: { Form }
 };
 
-const initialValues = {
-  foo: "Hello, World!"
-};
+export default meta;
+
+const label = "Textarea field";
 
 const helpText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.";
 
-export const Default: FC = () => (
-  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Textarea name="foo" onChange={action("onChange")} />
-  </SampleForm>
-);
+type StoryOptions = Partial<FormikConfig<FormikValues>> &
+  Partial<FormTextareaFieldProps>;
 
-export const Label: FC = () => (
-  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Textarea
-      name="foo"
-      label="Textarea field"
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
-export const Placeholder: FC = () => (
-  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Textarea
-      name="foo"
-      label="Textarea field"
-      placeholder="Please enter some text..."
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
-export const InitialValues: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Textarea
-      name="foo"
-      label="Textarea field"
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
-export const HelpText: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Textarea
-      name="foo"
-      label="Textarea field"
-      helpText={helpText}
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
-export const ErrorFeedback: FC = () => (
+const Template: Story<StoryOptions> = ({
+  name = "foo",
+  label,
+  helpText,
+  placeholder,
+  required,
+  rows,
+  initialValues = { [name]: "" },
+  initialErrors,
+  initialTouched,
+  validationSchema
+}) => (
   <SampleForm
-    initialValues={{ foo: "" }}
-    initialErrors={{ foo: "This field is required" }}
-    initialTouched={{ foo: true }}
-    validationSchema={yup.object({ foo: yup.string().required() })}
+    initialValues={initialValues}
+    initialErrors={initialErrors}
+    initialTouched={initialTouched}
+    validationSchema={validationSchema}
     onSubmit={action("onSubmit")}
   >
     <Form.Textarea
-      name="foo"
-      label="Textarea field"
+      name={name}
+      label={label}
+      helpText={helpText}
+      placeholder={placeholder}
+      rows={rows}
       onChange={action("onChange")}
-      required
+      required={required}
     />
   </SampleForm>
 );
 
-export const CustomRows: FC = () => (
-  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Textarea
-      name="foo"
-      label="Textarea field"
-      rows={10}
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
+export const Default = Template.bind({});
+Default.args = {};
+
+export const Label = Template.bind({});
+Label.args = {
+  label
+};
+
+export const CustomRows = Template.bind({});
+CustomRows.args = {
+  label,
+  rows: 10
+};
+
+export const Placeholder = Template.bind({});
+Placeholder.args = {
+  label,
+  placeholder: "Please enter some text..."
+};
+
+export const InitialValues = Template.bind({});
+InitialValues.args = {
+  label,
+  initialValues: { foo: "Hello, World!" }
+};
+
+export const HelpText = Template.bind({});
+HelpText.args = {
+  label,
+  helpText
+};
+
+export const ErrorFeedback = Template.bind({});
+ErrorFeedback.args = {
+  label,
+  required: true,
+  initialErrors: { foo: "This field is required" },
+  initialTouched: { foo: true },
+  validationSchema: yup.object({ foo: yup.string().required() })
+};

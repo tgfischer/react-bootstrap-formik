@@ -1,87 +1,96 @@
-import React, { FC } from "react";
+import React from "react";
 import * as yup from "yup";
 import { action } from "@storybook/addon-actions";
+import { FormikConfig, FormikValues } from "formik";
+import { Story, Meta } from "@storybook/react";
 
 import { SampleForm } from "../__tests__/SampleForm";
-import { Form } from "../../../index";
+import { Form, FormInputFieldProps } from "../../../index";
 
-export default {
+const meta: Meta = {
   title: "Input",
   component: Form.Input,
   subcomponents: { Form }
 };
 
-const initialValues = {
-  foo: "Hello, World!"
-};
+export default meta;
+
+const label = "Input field";
 
 const helpText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et orci diam. Donec rutrum odio sit amet ante porta, sed tempus est varius.";
 
-export const Default: FC = () => (
-  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input name="foo" onChange={action("onChange")} />
-  </SampleForm>
-);
+type StoryOptions = Partial<FormikConfig<FormikValues>> &
+  Partial<FormInputFieldProps>;
 
-export const Label: FC = () => (
-  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input name="foo" label="Input field" onChange={action("onChange")} />
-  </SampleForm>
-);
-
-export const Placeholder: FC = () => (
-  <SampleForm initialValues={{ foo: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input
-      name="foo"
-      label="Input field"
-      placeholder="Please enter some text..."
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
-export const CustomType: FC = () => (
-  <SampleForm initialValues={{ number: "" }} onSubmit={action("onSubmit")}>
-    <Form.Input
-      name="number"
-      type="number"
-      label="Numeric input"
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
-export const InitialValues: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Input name="foo" label="Input field" onChange={action("onChange")} />
-  </SampleForm>
-);
-
-export const HelpText: FC = () => (
-  <SampleForm initialValues={initialValues} onSubmit={action("onSubmit")}>
-    <Form.Input
-      name="foo"
-      label="Input field"
-      helpText={helpText}
-      onChange={action("onChange")}
-    />
-  </SampleForm>
-);
-
-export const ErrorFeedback: FC = () => (
+const Template: Story<StoryOptions> = ({
+  name = "foo",
+  type,
+  label,
+  helpText,
+  placeholder,
+  required,
+  initialValues = { [name]: "" },
+  initialErrors,
+  initialTouched,
+  validationSchema
+}) => (
   <SampleForm
-    initialValues={{ foo: "" }}
-    initialErrors={{ foo: "This field is required" }}
-    initialTouched={{ foo: true }}
-    validationSchema={yup.object({ foo: yup.string().required() })}
+    initialValues={initialValues}
+    initialErrors={initialErrors}
+    initialTouched={initialTouched}
+    validationSchema={validationSchema}
     onSubmit={action("onSubmit")}
   >
     <Form.Input
-      name="foo"
-      label="Input field"
+      name={name}
+      type={type}
+      label={label}
+      helpText={helpText}
+      placeholder={placeholder}
       onChange={action("onChange")}
-      required
+      required={required}
     />
   </SampleForm>
 );
+
+export const Default = Template.bind({});
+Default.args = {};
+
+export const Label = Template.bind({});
+Label.args = {
+  label
+};
+
+export const Placeholder = Template.bind({});
+Placeholder.args = {
+  label,
+  placeholder: "Please enter some text..."
+};
+
+export const CustomType = Template.bind({});
+CustomType.args = {
+  type: "number",
+  label: "Numeric input"
+};
+
+export const InitialValues = Template.bind({});
+InitialValues.args = {
+  label,
+  initialValues: { foo: "Hello, World!" }
+};
+
+export const HelpText = Template.bind({});
+HelpText.args = {
+  label,
+  helpText
+};
+
+export const ErrorFeedback = Template.bind({});
+ErrorFeedback.args = {
+  label,
+  required: true,
+  initialErrors: { foo: "This field is required" },
+  initialTouched: { foo: true },
+  validationSchema: yup.object({ foo: yup.string().required() })
+};
