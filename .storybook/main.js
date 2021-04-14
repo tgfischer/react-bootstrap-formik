@@ -3,6 +3,9 @@ const path = require("path");
 module.exports = {
   stories: ["../src/**/__stories__/*.stories.@(ts|tsx)"],
   addons: ["@storybook/addon-essentials"],
+  core: {
+    builder: "webpack5"
+  },
   typescript: {
     check: true,
     reactDocgen: "react-docgen-typescript",
