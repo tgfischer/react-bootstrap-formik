@@ -1,15 +1,15 @@
-import React from "react";
 import { action } from "@storybook/addon-actions";
-import * as yup from "yup";
-import { FormikConfig, FormikValues } from "formik";
 import { Story, Meta } from "@storybook/react";
+import { FormikConfig, FormikValues } from "formik";
+import React from "react";
+import * as yup from "yup";
 
-import { SampleForm } from "../__tests__/SampleForm";
 import {
   Form,
   FormCheckboxFieldProps,
   FormGroupFieldProps
 } from "../../../index";
+import { SampleForm } from "../__tests__/SampleForm";
 
 const meta: Meta = {
   title: "Checkbox",
@@ -87,6 +87,6 @@ ErrorFeedback.args = {
   initialErrors: { foo: "You must select at least one option" },
   initialTouched: { foo: true },
   validationSchema: yup.object({
-    foo: yup.array().of(yup.string().required()).required()
+    foo: yup.array().of(yup.string().required()).min(1).required()
   })
 };

@@ -1,5 +1,5 @@
-import { useCallback } from "react";
 import { useField, FieldConfig, GenericFieldHTMLAttributes } from "formik";
+import { useCallback } from "react";
 
 export function useChange<Value>(
   props: GenericFieldHTMLAttributes & FieldConfig<Value>

@@ -12,7 +12,12 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "settings": {
     "react": {
@@ -22,6 +27,23 @@
   "rules": {
     "@typescript-eslint/no-non-null-assertion": "off",
     "no-sequences": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "testing-library/no-container": "off",
+    "testing-library/no-node-access": "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
+    ]
   }
 }

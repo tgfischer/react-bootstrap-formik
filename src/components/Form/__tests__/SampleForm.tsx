@@ -1,9 +1,9 @@
+import { FormikValues } from "formik";
 import React, { FC } from "react";
 import { Button } from "react-bootstrap";
-import { FormikValues } from "formik";
 
-import { FormProps } from "../types";
 import { Form } from "../../../index";
+import { FormProps } from "../types";
 
 export const SampleForm: FC<FormProps<FormikValues>> = ({
   children,

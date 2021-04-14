@@ -1,8 +1,9 @@
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import React from "react";
 import * as yup from "yup";
-import { render, fireEvent, waitFor } from "@testing-library/react";
 
 import { Form } from "../../../index";
+
 import { SampleForm } from "./SampleForm";
 
 describe("Range tests", () => {
@@ -11,16 +12,16 @@ describe("Range tests", () => {
   const expectedValue = 75;
 
   it("should change the range value", async () => {
-    const { getByLabelText, getByText } = render(
+    render(
       <SampleForm initialValues={{ range: "" }} onSubmit={handleSubmit}>
         <Form.Range name="range" label="Range field" />
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Range field"), {
+    fireEvent.change(screen.getByLabelText("Range field"), {
       target: { value: expectedValue }
     });
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith(
@@ -31,7 +32,7 @@ describe("Range tests", () => {
   });
 
   it("should show the error feedback message", async () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ range: "" }}
         validationSchema={yup
@@ -45,7 +46,7 @@ describe("Range tests", () => {
       </SampleForm>
     );
 
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
@@ -56,7 +57,7 @@ describe("Range tests", () => {
   });
 
   it("should not show the error feedback if the range has not been touched", async () => {
-    const { container, getByText, getByLabelText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ range: "", text: "" }}
         validationSchema={yup
@@ -73,11 +74,13 @@ describe("Range tests", () => {
     );
 
     // Ensure that the error feedback is empty
-    fireEvent.change(getByLabelText("Text"), { target: { value: "foo" } });
+    fireEvent.change(screen.getByLabelText("Text"), {
+      target: { value: "foo" }
+    });
     expect(container.firstChild).toMatchSnapshot();
 
     // Ensure that the error feedback is set
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
         "range is a required field"
@@ -86,13 +89,13 @@ describe("Range tests", () => {
   });
 
   it("should call on change event", async () => {
-    const { getByLabelText } = render(
+    render(
       <SampleForm initialValues={{ range: "" }} onSubmit={handleSubmit}>
         <Form.Range name="range" label="Range field" onChange={handleChange} />
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Range field"), {
+    fireEvent.change(screen.getByLabelText("Range field"), {
       target: { value: expectedValue }
     });
 

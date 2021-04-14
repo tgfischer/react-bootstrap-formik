@@ -1,9 +1,10 @@
-import React, { FC, useContext, useCallback } from "react";
-import { useField, useFormikContext, FormikProps } from "formik";
-import { Form } from "react-bootstrap";
 import classnames from "classnames";
+import { useField, useFormikContext, FormikProps } from "formik";
+import React, { FC, useContext, useCallback } from "react";
+import { Form } from "react-bootstrap";
 
 import { noop } from "../utils";
+
 import { GroupContext } from "./Group";
 import { FormCheckboxFieldProps } from "./types";
 

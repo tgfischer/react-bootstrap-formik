@@ -1,11 +1,11 @@
+import { action } from "@storybook/addon-actions";
+import { Story, Meta } from "@storybook/react";
+import { FormikConfig, FormikValues } from "formik";
 import React from "react";
 import * as yup from "yup";
-import { action } from "@storybook/addon-actions";
-import { FormikConfig, FormikValues } from "formik";
-import { Story, Meta } from "@storybook/react";
 
-import { SampleForm } from "../__tests__/SampleForm";
 import { Form, FormTextareaFieldProps } from "../../../index";
+import { SampleForm } from "../__tests__/SampleForm";
 
 const meta: Meta = {
   title: "Textarea",

@@ -1,9 +1,9 @@
+import { action } from "@storybook/addon-actions";
 import React, { FC } from "react";
 import * as yup from "yup";
-import { action } from "@storybook/addon-actions";
 
-import { SampleForm } from "../__tests__/SampleForm";
 import { Form } from "../../../index";
+import { SampleForm } from "../__tests__/SampleForm";
 
 export default {
   title: "Samples",

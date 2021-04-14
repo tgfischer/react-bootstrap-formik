@@ -1,8 +1,9 @@
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import React from "react";
 import * as yup from "yup";
-import { render, fireEvent, waitFor } from "@testing-library/react";
 
 import { Form } from "../../../index";
+
 import { SampleForm } from "./SampleForm";
 
 describe("Textarea tests", () => {
@@ -11,16 +12,16 @@ describe("Textarea tests", () => {
   const message = "Hello, World!";
 
   it("should change the textarea value", async () => {
-    const { getByLabelText, getByText } = render(
+    render(
       <SampleForm initialValues={{ textarea: "" }} onSubmit={handleSubmit}>
         <Form.Textarea name="textarea" label="Textarea field" />
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Textarea field"), {
+    fireEvent.change(screen.getByLabelText("Textarea field"), {
       target: { value: message }
     });
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith(
@@ -31,7 +32,7 @@ describe("Textarea tests", () => {
   });
 
   it("should show the error feedback message", async () => {
-    const { container, getByLabelText, getByText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ textarea: "" }}
         validationSchema={yup
@@ -45,10 +46,10 @@ describe("Textarea tests", () => {
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Textarea field"), {
+    fireEvent.change(screen.getByLabelText("Textarea field"), {
       target: { value: "batman" }
     });
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
@@ -59,7 +60,7 @@ describe("Textarea tests", () => {
   });
 
   it("should not show the error feedback if the textarea has not been touched", async () => {
-    const { container, getByLabelText, getByText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ textarea: "", text: "" }}
         validationSchema={yup
@@ -76,11 +77,13 @@ describe("Textarea tests", () => {
     );
 
     // Ensure that the error feedback is empty
-    fireEvent.change(getByLabelText("Text"), { target: { value: "foo" } });
+    fireEvent.change(screen.getByLabelText("Text"), {
+      target: { value: "foo" }
+    });
     expect(container.firstChild).toMatchSnapshot();
 
     // Ensure that the error feedback is set
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
         "textarea is a required field"
@@ -89,7 +92,7 @@ describe("Textarea tests", () => {
   });
 
   it("should call on change event", async () => {
-    const { getByLabelText } = render(
+    render(
       <SampleForm initialValues={{ textarea: "" }} onSubmit={handleSubmit}>
         <Form.Textarea
           name="textarea"
@@ -99,7 +102,7 @@ describe("Textarea tests", () => {
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Textarea field"), {
+    fireEvent.change(screen.getByLabelText("Textarea field"), {
       target: { value: "batman" }
     });
 

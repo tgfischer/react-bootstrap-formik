@@ -1,11 +1,12 @@
+import { useField } from "formik";
 import React, { FC } from "react";
 import { Form } from "react-bootstrap";
-import { useField } from "formik";
 
 import { noop } from "../utils";
+
 import { Group } from "./Group";
-import { FormInputFieldProps } from "./types";
 import { useChange } from "./hooks";
+import { FormInputFieldProps } from "./types";
 
 export const Input: FC<FormInputFieldProps> = ({
   label,

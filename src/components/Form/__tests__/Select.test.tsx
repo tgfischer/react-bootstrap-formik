@@ -1,8 +1,9 @@
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import React, { FC } from "react";
 import * as yup from "yup";
-import { render, fireEvent, waitFor } from "@testing-library/react";
 
 import { Form } from "../../../index";
+
 import { SampleForm } from "./SampleForm";
 
 describe("Select tests", () => {
@@ -21,7 +22,7 @@ describe("Select tests", () => {
   );
 
   it("should change the select value", async () => {
-    const { getByLabelText, getByText } = render(
+    render(
       <SampleForm initialValues={{ select: "" }} onSubmit={handleSubmit}>
         <Form.Select name="select" label="Select field">
           <Options />
@@ -29,10 +30,10 @@ describe("Select tests", () => {
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Select field"), {
+    fireEvent.change(screen.getByLabelText("Select field"), {
       target: { value }
     });
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith(
@@ -43,7 +44,7 @@ describe("Select tests", () => {
   });
 
   it("should show the error feedback message", async () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ select: "" }}
         validationSchema={yup
@@ -63,7 +64,7 @@ describe("Select tests", () => {
       </SampleForm>
     );
 
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
 
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
@@ -74,7 +75,7 @@ describe("Select tests", () => {
   });
 
   it("should not show the error feedback if the select has not been touched", async () => {
-    const { container, getByText, getByLabelText } = render(
+    const { container } = render(
       <SampleForm
         initialValues={{ select: "", text: "" }}
         validationSchema={yup
@@ -97,11 +98,13 @@ describe("Select tests", () => {
     );
 
     // Ensure that the error feedback is empty
-    fireEvent.change(getByLabelText("Text"), { target: { value: "foo" } });
+    fireEvent.change(screen.getByLabelText("Text"), {
+      target: { value: "foo" }
+    });
     expect(container.firstChild).toMatchSnapshot();
 
     // Ensure that the error feedback is set
-    fireEvent.click(getByText("Submit"));
+    fireEvent.click(screen.getByText("Submit"));
     await waitFor(() =>
       expect(container.querySelector(".invalid-feedback")).toHaveTextContent(
         "select is a required field"
@@ -110,7 +113,7 @@ describe("Select tests", () => {
   });
 
   it("should call on change event", async () => {
-    const { getByLabelText } = render(
+    render(
       <SampleForm initialValues={{ select: "" }} onSubmit={handleSubmit}>
         <Form.Select name="select" label="Select field" onChange={handleChange}>
           <Options />
@@ -118,7 +121,7 @@ describe("Select tests", () => {
       </SampleForm>
     );
 
-    fireEvent.change(getByLabelText("Select field"), {
+    fireEvent.change(screen.getByLabelText("Select field"), {
       target: { value }
     });
 
