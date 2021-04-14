@@ -1,4 +1,4 @@
-# React Bootstrap Form
+# React Bootstrap Formik
 
 [![npm version](https://badge.fury.io/js/react-bootstrap-formik.svg)](https://badge.fury.io/js/react-bootstrap-formik)
 ![CI](https://github.com/tgfischer/react-bootstrap-formik/workflows/CI/badge.svg?branch=master)
@@ -25,9 +25,9 @@ yarn add react-bootstrap-formik formik bootstrap react-bootstrap yup
 
 ## Supported Components
 
-* `<Input />`
-* `<Textarea />`
-* `<Select />`
-* `<Checkbox />`
-* `<Radio />`
-* `<Range />`
+- `<Input />`
+- `<Textarea />`
+- `<Select />`
+- `<Checkbox />`
+- `<Radio />`
+- `<Range />`
