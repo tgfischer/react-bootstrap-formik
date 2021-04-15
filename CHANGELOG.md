@@ -1,3 +1,11 @@
+## [1.7.1](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.7.0...v1.7.1) (2021-04-15)
+
+
+### Bug Fixes
+
+* **issue-220:** automate github releases, and lint commit messages ([#221](https://github.com/tgfischer/react-bootstrap-formik/issues/221)) ([5a0f685](https://github.com/tgfischer/react-bootstrap-formik/commit/5a0f68595f59a71e59dbc77da76d96a5accc0c83))
+* **issue-220:** disable commit lint on release ([#222](https://github.com/tgfischer/react-bootstrap-formik/issues/222)) ([d220ebb](https://github.com/tgfischer/react-bootstrap-formik/commit/d220ebb9774caf44b2eb5aa92ce14de6689a65c3))
+
 # [1.7.0](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.6.3...v1.7.0) (2021-04-14)
 
 
