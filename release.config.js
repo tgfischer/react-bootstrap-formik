@@ -5,6 +5,12 @@ module.exports = {
     "@semantic-release/changelog",
     "@semantic-release/npm",
     [
+      "@semantic-release/github",
+      {
+        assets: [{ path: "dist", label: "Distribution" }]
+      }
+    ],
+    [
       "@semantic-release/git",
       {
         assets: [
