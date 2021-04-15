@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.7.1...v1.7.2) (2021-04-15)
+
+
+### Bug Fixes
+
+* **issue-220:** fix release config for github releases ([#223](https://github.com/tgfischer/react-bootstrap-formik/issues/223)) ([10697e1](https://github.com/tgfischer/react-bootstrap-formik/commit/10697e18dd3ee118b3c5dc33c046803a892ce0eb))
+
 ## [1.7.1](https://github.com/tgfischer/react-bootstrap-formik/compare/v1.7.0...v1.7.1) (2021-04-15)
 
 

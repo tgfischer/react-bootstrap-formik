@@ -2,7 +2,7 @@
   "name": "react-bootstrap-formik",
   "author": "Tom Fischer",
   "module": "dist/react-bootstrap-formik.esm.js",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
