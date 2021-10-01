@@ -26,7 +26,7 @@
     "bootstrap": ">=4",
     "formik": ">=2.2",
     "react": ">=17",
-    "react-bootstrap": ">=1.5",
+    "react-bootstrap": ">=1.6",
     "yup": ">=0.32"
   },
   "devDependencies": {
@@ -86,7 +86,7 @@
     "bootstrap": ">=4",
     "classnames": "^2.3.1",
     "formik": ">=2.2",
-    "react-bootstrap": ">=1.5",
+    "react-bootstrap": ">=1.6",
     "yup": ">=0.32"
   },
   "repository": {
